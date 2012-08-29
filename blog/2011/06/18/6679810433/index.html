@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>From Wordpress to Tumblr - Don't work. Be hated. Love someone.</title>
+  <meta name="author" content="Zheren (Ben) Hu">
+
+  
+  <meta name="description" content="Thanks to the script below for enabling me transfer my Wordpress posts to my newly created Tumblr almost painless. The script transferred most of &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zheren.hu/blog/2011/06/18/6679810433/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Don't work. Be hated. Love someone." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34392290-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Don't work. Be hated. Love someone.</a></h1>
+  
+    <h2>Shanghai, Tucson, New York City, San Francisco...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zheren.hu" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">From Wordpress to Tumblr</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Thanks to the script below for enabling me transfer my Wordpress posts to my newly created Tumblr almost painless. The script transferred most of stuff including title, tags, and categories correctly. Couple things are worth noting:</p>
+
+<ul><li>All Wordpress posts lost paragram formatting during the transfer so I had to go through each post to fix it. (This was the time I felt glad that I did not have many posts)</li>
+
+<li>Table Contentin posts are gone and I cannot quickly figure out how to create table content in a Tumblr post. Thus I decided to take a screenshot and inserted it as an image.</li>
+
+<li>Tumblr Theme installation process is very confusing, maybe just because I am a newbie. Every time I clicked <strong>install</strong> on a theme, it goes to my blog customize page, but it still displays those sample contents with my blog name; I clicked <strong>save+close</strong> several times, it did not work and I had to specifically click <strong>save</strong> to make it work. Is <strong>save+close</strong> supposed to be a superset of <strong>save</strong>?</li>
+
+<li>The content editor for post is very narrow in Chrome (v12.0) and I cannot resize it. Is it a feature because Tumblr is a microblogging platform?</li>
+
+</ul><p><a href="http://mwunsch.tumblr.com/post/454540000">mwunsch</a>:</p>
+
+<blockquote>
+
+<p>Here’s a little command-line tool for importing WordPress posts to Tumblr. It works okay. Download it, <code>chmod 755</code>, and run it like this:</p>
+
+<pre><code>$: ./wp2tumblr wordpress.xml
+
+</code></pre>
+
+<p>Where <code>wordpress.xml</code> is a WordPress XML export. You can pass an optional <code>--group</code> parameter if you want to publish to a blog other than your main.</p>
+
+<p>Some caveats:</p>
+
+<ul><li>All posts are <em>regular</em> posts.</li>
+
+<li>Some post meta information is lost in the ether.</li>
+
+<li>Comments are lost.</li>
+
+<li>Anything not set to <em>published</em> will be saved as a Tumblr draft.</li>
+
+</ul><p><strong><em>Update</em></strong>: I’ve updated the script to throttle requests to try to stay within the rate limit on <code>api/write</code>.</p>
+
+<p>If there are less than 60 posts to import, this script uses Weary’s <code>batch</code> method for asynchronous requests. Each request is performed in its own thread (or your Ruby VM of choice’s approximation of a Thread). In other words, the script is really fast if you have less than 60 posts, but if not, will take 1 second per post to make sure you don’t exceed the rate limit.</p>
+
+<p><strong><em>Update</em></strong>: The good folks at Tumblr upped the rate limit on api/write from 10 to 60. Thanks Marco!</p>
+
+</blockquote>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Zheren (Ben) Hu</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zheren.hu/blog/2011/06/18/6679810433/" data-via="" data-counturl="http://zheren.hu/blog/2011/06/18/6679810433/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/10/04/6676601163/" title="Previous Post: Install MySQLdb Python driver on Mac OS">&laquo; Install MySQLdb Python driver on Mac OS</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/06/22/6818658455/" title="Next Post: This is prolly my 1st web app ever and it is still on the web!">This is prolly my 1st web app ever and it is still on the web! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/07/30/8283443447/">A pocket PC I used to have. Good old days&#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/07/13/7605551346/">How people say "Happy Birthday" on social media?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/28/7037799911/">500 when tried to sign up Google+ keep me posted list</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/24/6858653448/">First impression on @github for Mac</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/22/6818658455/">This is prolly my 1st web app ever and it is still on the web!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Zheren (Ben) Hu -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
