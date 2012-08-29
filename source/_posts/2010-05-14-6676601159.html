@@ -1,0 +1,18 @@
+---
+layout: post
+title: Tomcat Character Encoding Configuration for UTF-8
+---
+
+<p>Tomcat is still a very popular servlet container, but the default character encoding for Tomcat is ISO-8859-1. This causes problem if you want your website to be international because you will need to UTF-8 encoding. There is an <a href="http://wiki.apache.org/tomcat/FAQ/CharacterEncoding#Q5">instruction</a> on Tomcat wiki talking about how to set character encoding. I just want to add some extra points.</p>
+
+<ul><li>If you are using Spring framework, you can use the character filter provided by Spring.</li>
+
+</ul><p><span class="Apple-style-span"><span class="Apple-style-span">
+
+<pre> &lt;!--<br/>    - This is useful because current browsers typically do not<br/>    - set a character encoding even if specified in the HTML page or form<br/> --&gt;<br/> &lt;filter&gt;<br/>    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;<br/>    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;<br/>    &lt;init-param&gt;<br/>        &lt;param-name&gt;encoding&lt;/param-name&gt;<br/>        &lt;param-value&gt;UTF-8&lt;/param-value&gt;<br/>    &lt;/init-param&gt;<br/>    &lt;init-param&gt;<br/>        &lt;param-name&gt;forceEncoding&lt;/param-name&gt;<br/>        &lt;param-value&gt;true&lt;/param-value&gt;<br/>    &lt;/init-param&gt;<br/> &lt;/filter&gt;<br/><br/> &lt;filter-mapping&gt;<br/>    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;<br/>    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;<br/> &lt;/filter-mapping&gt;</pre>
+
+</span></span></p>
+
+<ul></ul><ul><li>Make sure that the character filter is the <strong>FIRST</strong> in your filter chain. This is actually very important since filter chain does have order.</li>
+
+</ul>

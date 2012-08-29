@@ -1,0 +1,28 @@
+---
+layout: post
+title: Install MySQLdb Python driver on Mac OS
+---
+
+<p>If you get this error when you try to build it, please read the <em>README</em> carefully because you need to install <a href="http://pypi.python.org/pypi/setuptools">setuptools</a> first.</p>
+
+<blockquote>
+
+<p><span>ImportError: No module named setuptools</span></p>
+
+</blockquote>
+
+<p>If you get this error when you try to build it, it is because mysql is installed in a customized path on your Mac.  <span></span></p>
+
+<blockquote>
+
+<p><span>EnvironmentError: mysql_config not found</span></p>
+
+</blockquote>
+
+<p>You just need to modify this link in the site.cfg.  <span></span></p>
+
+<blockquote>
+
+<p><span>#mysql_config = /usr/local/bin/mysql_config</span></p>
+
+</blockquote>
