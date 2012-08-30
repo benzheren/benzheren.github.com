@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Don't work. Be hated. Love someone.</title>
+  <meta name="author" content="Zheren (Ben) Hu">
+
+  
+  <meta name="description" content="If you get this error when you try to build it, please read the README carefully because you need to install setuptools first. ImportError: No module &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zheren.hu/blog/page/4/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Don't work. Be hated. Love someone." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34392290-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Don't work. Be hated. Love someone.</a></h1>
+  
+    <h2>Shanghai, Tucson, New York City, San Francisco...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zheren.hu" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/04/6676601163/">Install MySQLdb Python Driver on Mac OS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-04T00:00:00+08:00" pubdate data-updated="true">Oct 4<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>If you get this error when you try to build it, please read the <em>README</em> carefully because you need to install <a href="http://pypi.python.org/pypi/setuptools">setuptools</a> first.</p>
+
+<blockquote>
+
+<p><span>ImportError: No module named setuptools</span></p>
+
+</blockquote>
+
+<p>If you get this error when you try to build it, it is because mysql is installed in a customized path on your Mac.  <span></span></p>
+
+<blockquote>
+
+<p><span>EnvironmentError: mysql_config not found</span></p>
+
+</blockquote>
+
+<p>You just need to modify this link in the site.cfg.  <span></span></p>
+
+<blockquote>
+
+<p><span>#mysql_config = /usr/local/bin/mysql_config</span></p>
+
+</blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/05/14/6676601159/">Tomcat Character Encoding Configuration for UTF-8</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-14T00:00:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Tomcat is still a very popular servlet container, but the default character encoding for Tomcat is ISO-8859-1. This causes problem if you want your website to be international because you will need to UTF-8 encoding. There is an <a href="http://wiki.apache.org/tomcat/FAQ/CharacterEncoding#Q5">instruction</a> on Tomcat wiki talking about how to set character encoding. I just want to add some extra points.</p>
+
+<ul><li>If you are using Spring framework, you can use the character filter provided by Spring.</li>
+
+</ul><p><span class="Apple-style-span"><span class="Apple-style-span">
+
+<pre> &lt;!--<br/>    - This is useful because current browsers typically do not<br/>    - set a character encoding even if specified in the HTML page or form<br/> --&gt;<br/> &lt;filter&gt;<br/>    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;<br/>    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;<br/>    &lt;init-param&gt;<br/>        &lt;param-name&gt;encoding&lt;/param-name&gt;<br/>        &lt;param-value&gt;UTF-8&lt;/param-value&gt;<br/>    &lt;/init-param&gt;<br/>    &lt;init-param&gt;<br/>        &lt;param-name&gt;forceEncoding&lt;/param-name&gt;<br/>        &lt;param-value&gt;true&lt;/param-value&gt;<br/>    &lt;/init-param&gt;<br/> &lt;/filter&gt;<br/><br/> &lt;filter-mapping&gt;<br/>    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;<br/>    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;<br/> &lt;/filter-mapping&gt;</pre>
+
+</span></span></p>
+
+<ul></ul><ul><li>Make sure that the character filter is the <strong>FIRST</strong> in your filter chain. This is actually very important since filter chain does have order.</li>
+
+</ul>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/09/22/6676601178/">An Annoying IE Bug</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-22T00:00:00+08:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Yesterday, I came across a very annoying IE bug: IE XMLHTTP implementation turns a standard 204 response code into a pretty random 1223 status code. Apparently it is an IE bug for a while, at least for both IE 7 and IE 8. And I found out a pretty cool <a href="http://www.enhanceie.com/ie/bugs.asp">website</a> to track IE bugs.</p>
+
+<p>I am not an <a href="http://www.msboycott.com/super/">anti-Microsoft</a> person, but Microsoft Internet Explorer is really one of a kind. These days when the whole industry is trying to embrace standards, IE products are behind the industry standards movement. IE6 is already a disaster for web developers and a lot of new <a href="http://mashable.com/2009/08/11/orkut-ie6/">websites</a> already stop supporting it. IE8 has made some good improvements, hope Microsoft can incorporate more open standards into its IE product and fix those annoying bugs.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/11/6676601194/">SNS in China</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-11T00:00:00+08:00" pubdate data-updated="true">Jul 11<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today I read an <a target="_blank" href="http://www.donews.com/Content/200907/6ebcc799-d9b8-46e3-bca3-ba153b4e5b7a.shtm">article</a> from a Chinese tech site, it talks about the development of SNS industry in China. As we all know, after MySpace and Facebook took off in US, there are tons of copycats in China such as XiaoNei.com, KaiXin.com, KaiXin001.com and etc. There are a lot of competition between these early adopters, and you can even tell from their names: KaiXin.com and KaiXin001.com belong to two different companies and one of them is suing the other one. There are a lot of new comers, for example, Sohu.com is launcing its own SNS site. There are a lot of problems within this industry in China. Although they copy the idea pretty fast, even the look and feel, they do not have a good technical architecture and a good business model.</p>
+
+<p>Architecture wise, they have similar platform concept as Facebook and 3rd party developers can develope applications on that. But it does not provide a very good support for 3rd party applications developers and it leads to very few applications on the platform compared to thousands on Facebook.</p>
+
+<p>Business model wise, they position themselves as SNS, but what they are doing are off the track of real Social Network concept. They use webpage games to attract users which is fine. But most webpage games provide things like gambling, stealing and etc. which are not positive. Some of them are trying to shift their business model to Twitter model.</p>
+
+<p>Overall I think there is still a long way for SNS in China. Even in US, Facebook and MySpace are trying to find a good way to grow their business in a healthy way. SNS in China is trying to find a localized business model for China, and hopefully they can find a healthy way.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/08/6676601120/">Exit Strategy NYC</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-08T00:00:00+08:00" pubdate data-updated="true">Jul 8<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Yesterday one of my coworkers dropped us an email point out to an interesting iPhone App: <a href="http://www.exitstrategynyc.com/" target="_blank">Exit Strategy NYC</a>. <a href="http://bwong.net" target="_blank">One of the author</a> actually works full time in Morgan Stanley as IT associate. I have to say it is a very nerdy and handy app. Even for myself, everyday I take the same subway and I already figure out where the door opens when the train stops depending on different model of the train. $1.99 for an app like this, I guess quite a few New Yorkers will buy it. Since I do not use MTA that much, I guess I probably gonna skip this one.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/07/6676601133/">Register a Cool Domain Name</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-07T00:00:00+08:00" pubdate data-updated="true">Jul 7<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>As we all know, common domains include .com, .net, .org, .info, .biz and etc. But at the same time, there are a lot of <a target="_blank" href="http://en.wikipedia.org/wiki/Country_code_top-level_domain">ccTLD (country code top-level domain)</a>. Thus by using these ccTLDs, you can register some cool domain name for yourself especially for people with a Chinese name. For example, .HU, Hungary domain, can be used for people whose last name is 胡, spelled as Hu in English; .GU, Guam domain, can be used for people whose last name is 顾. Please check out the table below:</p>
+
+<p><img alt="Cool Domain Name for Chinese" src="https://lh4.googleusercontent.com/-3oEz0_JZKC4/Tf10IYv5A0I/AAAAAAAAAhU/gTdo2gz5Zbs/s800/Screen%252520shot%2525202011-06-18%252520at%2525208.49.08%252520PM.png" width="577" height="450"/></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/06/6676601157/">Accessibility and You</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-06T00:00:00+08:00" pubdate data-updated="true">Jul 6<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today I went into an interesting talk by Chris Heilmann: <a target="_blank" href="http://www.wait-till-i.com/2009/06/05/accessibility-and-you-my-brownbag-presentation-at-ebaygumtreepaypal/">Accessibilty and You</a>. Before I got into this talk, accessibilty means to provide better user interface for people with disability. Apparently I am wrong. In this talk, Chris mentioned: &#8220;The fastest growing segment of the <span>U.S. </span>population is the 65 and over group.&#8221; <a target="_blank" href="http://lifetwo.com/production/node/20071114-the-middle-aged-discover-facebook-a-little-late-to-the-game">Some statistics</a> from facebook has a similar indication of the market shift. Baby boomers in US starts to become potential consumers of Web 2.0 technologies. When you are aging, you may start to have problems with vision, hearing, movement and etc. Thus accessibility is important for this group of people. Apple, a company providing great user experiences, just released a good feature with their newest <a target="_blank" href="http://www.apple.com/iphone/iphone-3gs/voice-control.html">iPhone 3GS</a>. I guess there is no best user interface, only better one =).</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/3/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/02/07/how-much-time-did-it-take-us-to-register-the-company-in-china/">How much time did it take us to register the company in China?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/15/my-experiences-with-chinese-major-banks-for-expats-and-returnees/">My experiences with Chinese Major Banks (for Expats and Returnees)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/26/things-about-company-registration-in-china/">公司注册的那点事儿</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/19/failure-of-retargeting/">Failure of Retargeting</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/11/10/i-am-back/">I am back!</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Zheren (Ben) Hu -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
