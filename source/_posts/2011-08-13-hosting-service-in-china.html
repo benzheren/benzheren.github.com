@@ -1,0 +1,31 @@
+---
+layout: post
+title: Hosting Service in China
+tags:
+- English
+- Work
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '21156014'
+  jabber_published: '1313218724'
+  reddit: a:2:{s:5:"count";s:1:"0";s:4:"time";s:10:"1329027034";}
+---
+When you start working on an Internet startup, one of few things you will think about first is how I should host my service. In US, where Internet infrastructure is ahead of the rest of the world, this becomes less a problem for startup because there are so many choices like AWS, GAE or even Microsoft Azure. However, situation in China is very different: first, both AWS and GAE do not have servers in mainland China, which means it is really slow to access either of them; second, legally it is not a good idea to use foreign servers anyway, because in order for you to run Internet business in China, you have to register your website with government and that requires you have serves physically located in China.<br/>
+<br/>
+In the old time, some Chinese startups will start with a foreign VPS (usually in US) such as Linode for the development and initial launch while they wait for the approval of government organizations. After that, the startup has to buy its own servers and pay data centers to put their servers on the rack which is a pretty big investment upfront for a small startup.<br/>
+<br/>
+With the development of Chinese Internet infrastructure and the boom of tech startups, these days there are more and more local companies start to offer VPS or cloud hosting services. Companies I am aware of are:<br/>
+<ul><br/>
+	<li>http://aliyun.com: this is a service provided by <a href="http://alibaba.com">Alibaba</a>, one of the 3 biggest Internet companies in China. Their service looks like a VPS service with a pretty clear <a href="http://phpwind.aliyun.com/show/ecc">fee structure</a>. It starts with 199 RMB a month (about 30 USD) for a server. It provides a beta version cloud database service which does backup and a lot of maintenance work for you. It supports only MySQL for now.</li><br/>
+	<li>http://netbank.cn: this is a HangZhou company which provides VPS service as well. It provide three basic plans and on top of that you can customize according to your need. For a Intel XEON520 single core, 2GB memory and 30GB harddrive server with 100MB bandwidth from China Telecom (this is not the amount, just the speed)  , it costs you around 3000RMB/year.</li><br/>
+	<li>http://xingcloud.com: this is a startup from Kai-Fu Lee's <a href="http://chuangxin.com">Innovation Works</a>, currently it markets itself as a cloud platform for game developers. With the reputation of Kai-Fu Lee and the strong team behind it, XingCloud could be an interesting player to watch in this area.</li><br/>
+</ul><br/>
+<span class="Apple-style-span" style="color:#444444;font-family:Georgia, 'Bitstream Charter', serif;font-size:16px;line-height:24px;">A very interesting thing to note about hosting service in China is: you need to pay for bandwidth of different ISPs, because if you don't do that, your service will be slow for users using that ISP. There are six major ISPs here, and two of them are the biggest: China Telecom and China Net Communication (CNC). For a startup, you probably should pay bandwidth for these 2 ISPs. Because of this bandwidth thing, the cost of Chinese Internet Video companies are much higher than Youtube.</span><br/>
+<br/>
+<span class="Apple-style-span" style="color:#444444;font-family:Georgia, 'Bitstream Charter', serif;font-size:16px;line-height:24px;">What did we do?</span><br/>
+<br/>
+<span class="Apple-style-span" style="color:#444444;font-family:Georgia, 'Bitstream Charter', serif;font-size:16px;line-height:24px;">Before we got here, we started with a <a href="http://www.linode.com">Linode</a> monthly account. We have been using that for the past week, it is just super slow because of GFW and the physical distance. Sometimes our terminal window just halts there. So we have decided to switch to a local provider since we can try out their service 3 months for free. That will make huge difference because the average ping value for Linode server is about 350ms while the local one is about 5ms. By the way, there is a <a href="http://ping.chinaz.com/">service</a> in China to test your ping value from different parts of the country with different ISPs. </span><br/>
+<br/>
+Hope this information can give you an idea how hosting works in China. =)

@@ -1,0 +1,28 @@
+---
+layout: post
+title: IE Conditional Comments with HAML
+tags:
+- English
+- Work
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '21156014'
+  jabber_published: '1313577237'
+  reddit: a:2:{s:5:"count";s:1:"0";s:4:"time";s:10:"1318304918";}
+---
+I am using HAML, SASS with Rails for most of the front end code. I was trying to add some IE conditional CSS include in the header and HTML should look like this:<br/>
+<blockquote>&lt;!--[if (!IE)|(gte IE 8)]&gt;&lt;!--&gt;<br/>
+&lt;link href="some.css" media="screen" rel="stylesheet" type="text/css" /&gt;<br/>
+&lt;!--&lt;![endif]--&gt;</blockquote><br/>
+It is a little bit different from straightforward IE conditional comments like this:<br/>
+<blockquote>&lt;!--[if (!IE)|(gte IE 8)]&gt;<br/>
+&lt;link href="some.css" media="screen" rel="stylesheet" type="text/css" /&gt;<br/>
+&lt;![endif]--&gt;</blockquote><br/>
+The way I implementes in HAML is:<br/>
+<blockquote>/[if (!IE)|(gte IE 8)]<br/>
+!= "&lt;!--&gt;"<br/>
+= stylesheet_link_tag 'some', :media =&gt; 'screen'<br/>
+!= "&lt;!--"</blockquote><br/>
+I am not sure if there is an easier way to do this in HAML, but my solution works!
