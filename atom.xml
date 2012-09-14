@@ -4,7 +4,7 @@
   <title><![CDATA[Don't work. Be hated. Love someone.]]></title>
   <link href="http://zheren.hu/atom.xml" rel="self"/>
   <link href="http://zheren.hu/"/>
-  <updated>2012-08-30T17:05:16+08:00</updated>
+  <updated>2012-09-14T11:19:08+08:00</updated>
   <id>http://zheren.hu/</id>
   <author>
     <name><![CDATA[Zheren (Ben) Hu]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[CocoaPods Tip #1: How To Use Edge Version of A Library?]]></title>
+    <link href="http://zheren.hu/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library/"/>
+    <updated>2012-09-14T10:55:00+08:00</updated>
+    <id>http://zheren.hu/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library</id>
+    <content type="html"><![CDATA[<p>I am using <a href="http://cocoapods.org/">CocoaPods</a> to manage my iOS project. Because a lot of iOS libraries are open source, sometimes you have to use the edge version of the library to get the latest pathes to make things work. If you read through articles on the <a href="https://github.com/CocoaPods/CocoaPods/wiki/Dependency-declaration-options">project wiki</a>, and it seems to be pretty easy and just like how developers do in Gemfile:</p>
+
+<pre><code>pod 'LibName', :git =&gt; 'https://url/of/the/github/repo'
+</code></pre>
+
+<p>If you try to enter <code>pod install</code>, it probably won&#8217;t work the way you expect: you will still use the old library. So the easiest way to solve this problem is to <strong>delete your Pods director</strong> and do <code>pod install</code>. And this is still the way to make it work for CocoaPods 0.14.0.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How much time did it take us to register the company in China?]]></title>
@@ -302,28 +316,6 @@ If it was difficult enough for us to decide our milestones and KPIs at this mome
 For infrastructure cost, it is harder because there is <a title="Hosting Service in China" href="http://9kmiles.wordpress.com/2011/08/13/hosting-service-in-china/">no awesome service like AWS in China</a>: standard and easily to calculate cost. The cost structure of existing players make it very hard for us to calculate cost. VPS provides a virtual machine with spec like 8GB memory and 300GB harddrive. 300GB!!! It is even smaller than a home desktop these days. For us, we certainly need beefy machines with large storage. But in order to make our life easier, we standardize our prediction with machines of 8GB memory and 1TB harddrive (which is still too low).<br/>
 <br/>
 With all these difficulties, we still managed to finish the excel sheet. After that, we realized that it was actually a pretty good exercise. It helped us to think about how to value the success of our project in a year and provide us a chance to think about problems like salary, server cost and etc. Even if current numbers are pretty off, we will have a better idea next time.
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[IE Conditional Comments with HAML]]></title>
-    <link href="http://zheren.hu/blog/2011/08/17/ie-conditional-comments-with-haml/"/>
-    <updated>2011-08-17T00:00:00+08:00</updated>
-    <id>http://zheren.hu/blog/2011/08/17/ie-conditional-comments-with-haml</id>
-    <content type="html"><![CDATA[I am using HAML, SASS with Rails for most of the front end code. I was trying to add some IE conditional CSS include in the header and HTML should look like this:<br/>
-<blockquote>&lt;!&#8211;[if (!IE)|(gte IE 8)]&gt;&lt;!&#8211;&gt;<br/>
-&lt;link href=&#8221;some.css&#8221; media=&#8221;screen&#8221; rel=&#8221;stylesheet&#8221; type=&#8221;text/css&#8221; /&gt;<br/>
-&lt;!&#8211;&lt;![endif]&#8211;&gt;</blockquote><br/>
-It is a little bit different from straightforward IE conditional comments like this:<br/>
-<blockquote>&lt;!&#8211;[if (!IE)|(gte IE 8)]&gt;<br/>
-&lt;link href=&#8221;some.css&#8221; media=&#8221;screen&#8221; rel=&#8221;stylesheet&#8221; type=&#8221;text/css&#8221; /&gt;<br/>
-&lt;![endif]&#8211;&gt;</blockquote><br/>
-The way I implementes in HAML is:<br/>
-<blockquote>/[if (!IE)|(gte IE 8)]<br/>
-!= &#8220;&lt;!&#8211;&gt;&#8221;<br/>
-= stylesheet_link_tag &#8216;some&#8217;, :media =&gt; &#8216;screen&#8217;<br/>
-!= &#8220;&lt;!&#8211;&#8221;</blockquote><br/>
-I am not sure if there is an easier way to do this in HAML, but my solution works!
 ]]></content>
   </entry>
   

@@ -9,7 +9,7 @@
   <meta name="author" content="Zheren (Ben) Hu">
 
   
-  <meta name="description" content="If you get this error when you try to build it, please read the README carefully because you need to install setuptools first. ImportError: No module &hellip;">
+  <meta name="description" content="Thanks to the script below for enabling me transfer my Wordpress posts to my newly created Tumblr almost painless. The script transferred most of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,80 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/06/18/6679810433/">From Wordpress to Tumblr</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Thanks to the script below for enabling me transfer my Wordpress posts to my newly created Tumblr almost painless. The script transferred most of stuff including title, tags, and categories correctly. Couple things are worth noting:</p>
+
+<ul><li>All Wordpress posts lost paragram formatting during the transfer so I had to go through each post to fix it. (This was the time I felt glad that I did not have many posts)</li>
+
+<li>Table Contentin posts are gone and I cannot quickly figure out how to create table content in a Tumblr post. Thus I decided to take a screenshot and inserted it as an image.</li>
+
+<li>Tumblr Theme installation process is very confusing, maybe just because I am a newbie. Every time I clicked <strong>install</strong> on a theme, it goes to my blog customize page, but it still displays those sample contents with my blog name; I clicked <strong>save+close</strong> several times, it did not work and I had to specifically click <strong>save</strong> to make it work. Is <strong>save+close</strong> supposed to be a superset of <strong>save</strong>?</li>
+
+<li>The content editor for post is very narrow in Chrome (v12.0) and I cannot resize it. Is it a feature because Tumblr is a microblogging platform?</li>
+
+</ul><p><a href="http://mwunsch.tumblr.com/post/454540000">mwunsch</a>:</p>
+
+<blockquote>
+
+<p>Here’s a little command-line tool for importing WordPress posts to Tumblr. It works okay. Download it, <code>chmod 755</code>, and run it like this:</p>
+
+<pre><code>$: ./wp2tumblr wordpress.xml
+
+</code></pre>
+
+<p>Where <code>wordpress.xml</code> is a WordPress XML export. You can pass an optional <code>--group</code> parameter if you want to publish to a blog other than your main.</p>
+
+<p>Some caveats:</p>
+
+<ul><li>All posts are <em>regular</em> posts.</li>
+
+<li>Some post meta information is lost in the ether.</li>
+
+<li>Comments are lost.</li>
+
+<li>Anything not set to <em>published</em> will be saved as a Tumblr draft.</li>
+
+</ul><p><strong><em>Update</em></strong>: I’ve updated the script to throttle requests to try to stay within the rate limit on <code>api/write</code>.</p>
+
+<p>If there are less than 60 posts to import, this script uses Weary’s <code>batch</code> method for asynchronous requests. Each request is performed in its own thread (or your Ruby VM of choice’s approximation of a Thread). In other words, the script is really fast if you have less than 60 posts, but if not, will take 1 second per post to make sure you don’t exceed the rate limit.</p>
+
+<p><strong><em>Update</em></strong>: The good folks at Tumblr upped the rate limit on api/write from 10 to 60. Thanks Marco!</p>
+
+</blockquote>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -388,6 +462,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library/">CocoaPods Tip #1: How To Use Edge Version of A Library?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/07/how-much-time-did-it-take-us-to-register-the-company-in-china/">How much time did it take us to register the company in China?</a>
       </li>
     
@@ -401,10 +479,6 @@
     
       <li class="post">
         <a href="/blog/2011/11/19/failure-of-retargeting/">Failure of Retargeting</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/10/i-am-back/">I am back!</a>
       </li>
     
   </ul>

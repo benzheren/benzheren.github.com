@@ -9,8 +9,7 @@
   <meta name="author" content="Zheren (Ben) Hu">
 
   
-  <meta name="description" content="Yesterday page view of our blog was over 100, 1st milestone for the blog! And finally we are able to check our traffic on Quantcast.
-">
+  <meta name="description" content="I am using HAML, SASS with Rails for most of the front end code. I was trying to add some IE conditional CSS include in the header and HTML should &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/08/17/ie-conditional-comments-with-haml/">IE Conditional Comments With HAML</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-17T00:00:00+08:00" pubdate data-updated="true">Aug 17<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">I am using HAML, SASS with Rails for most of the front end code. I was trying to add some IE conditional CSS include in the header and HTML should look like this:<br/>
+<blockquote>&lt;!&#8211;[if (!IE)|(gte IE 8)]&gt;&lt;!&#8211;&gt;<br/>
+&lt;link href=&#8221;some.css&#8221; media=&#8221;screen&#8221; rel=&#8221;stylesheet&#8221; type=&#8221;text/css&#8221; /&gt;<br/>
+&lt;!&#8211;&lt;![endif]&#8211;&gt;</blockquote><br/>
+It is a little bit different from straightforward IE conditional comments like this:<br/>
+<blockquote>&lt;!&#8211;[if (!IE)|(gte IE 8)]&gt;<br/>
+&lt;link href=&#8221;some.css&#8221; media=&#8221;screen&#8221; rel=&#8221;stylesheet&#8221; type=&#8221;text/css&#8221; /&gt;<br/>
+&lt;![endif]&#8211;&gt;</blockquote><br/>
+The way I implementes in HAML is:<br/>
+<blockquote>/[if (!IE)|(gte IE 8)]<br/>
+!= &#8220;&lt;!&#8211;&gt;&#8221;<br/>
+= stylesheet_link_tag &#8216;some&#8217;, :media =&gt; &#8216;screen&#8217;<br/>
+!= &#8220;&lt;!&#8211;&#8221;</blockquote><br/>
+I am not sure if there is an easier way to do this in HAML, but my solution works!
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -442,80 +490,6 @@ Hope this information can give you an idea how hosting works in China. =)
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/18/6679810433/">From Wordpress to Tumblr</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-18T00:00:00+08:00" pubdate data-updated="true">Jun 18<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Thanks to the script below for enabling me transfer my Wordpress posts to my newly created Tumblr almost painless. The script transferred most of stuff including title, tags, and categories correctly. Couple things are worth noting:</p>
-
-<ul><li>All Wordpress posts lost paragram formatting during the transfer so I had to go through each post to fix it. (This was the time I felt glad that I did not have many posts)</li>
-
-<li>Table Contentin posts are gone and I cannot quickly figure out how to create table content in a Tumblr post. Thus I decided to take a screenshot and inserted it as an image.</li>
-
-<li>Tumblr Theme installation process is very confusing, maybe just because I am a newbie. Every time I clicked <strong>install</strong> on a theme, it goes to my blog customize page, but it still displays those sample contents with my blog name; I clicked <strong>save+close</strong> several times, it did not work and I had to specifically click <strong>save</strong> to make it work. Is <strong>save+close</strong> supposed to be a superset of <strong>save</strong>?</li>
-
-<li>The content editor for post is very narrow in Chrome (v12.0) and I cannot resize it. Is it a feature because Tumblr is a microblogging platform?</li>
-
-</ul><p><a href="http://mwunsch.tumblr.com/post/454540000">mwunsch</a>:</p>
-
-<blockquote>
-
-<p>Here’s a little command-line tool for importing WordPress posts to Tumblr. It works okay. Download it, <code>chmod 755</code>, and run it like this:</p>
-
-<pre><code>$: ./wp2tumblr wordpress.xml
-
-</code></pre>
-
-<p>Where <code>wordpress.xml</code> is a WordPress XML export. You can pass an optional <code>--group</code> parameter if you want to publish to a blog other than your main.</p>
-
-<p>Some caveats:</p>
-
-<ul><li>All posts are <em>regular</em> posts.</li>
-
-<li>Some post meta information is lost in the ether.</li>
-
-<li>Comments are lost.</li>
-
-<li>Anything not set to <em>published</em> will be saved as a Tumblr draft.</li>
-
-</ul><p><strong><em>Update</em></strong>: I’ve updated the script to throttle requests to try to stay within the rate limit on <code>api/write</code>.</p>
-
-<p>If there are less than 60 posts to import, this script uses Weary’s <code>batch</code> method for asynchronous requests. Each request is performed in its own thread (or your Ruby VM of choice’s approximation of a Thread). In other words, the script is really fast if you have less than 60 posts, but if not, will take 1 second per post to make sure you don’t exceed the rate limit.</p>
-
-<p><strong><em>Update</em></strong>: The good folks at Tumblr upped the rate limit on api/write from 10 to 60. Thanks Marco!</p>
-
-</blockquote>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -533,6 +507,10 @@ Hope this information can give you an idea how hosting works in China. =)
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library/">CocoaPods Tip #1: How To Use Edge Version of A Library?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/07/how-much-time-did-it-take-us-to-register-the-company-in-china/">How much time did it take us to register the company in China?</a>
       </li>
     
@@ -546,10 +524,6 @@ Hope this information can give you an idea how hosting works in China. =)
     
       <li class="post">
         <a href="/blog/2011/11/19/failure-of-retargeting/">Failure of Retargeting</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/10/i-am-back/">I am back!</a>
       </li>
     
   </ul>

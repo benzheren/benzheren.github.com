@@ -9,7 +9,7 @@
   <meta name="author" content="Zheren (Ben) Hu">
 
   
-  <meta name="description" content="上个星期周中的时候回了一次上海，我们一般很少周中回去，这次主要是去参加一些上海当地的和创业有关的活动，也想更多的了解一下上海本地创业的氛围。 第一个活动是在上海老美术馆顶楼的一个露天法国餐厅举行的酒会，主办方是在startup的世界里面非常有名的金融机构SVB。我和Matt能够有幸参与这个活动， &hellip;">
+  <meta name="description" content="Tooltip是UI里面比较常见的一个元素，jQuery上的tooltip的库非常多，我之前有用过一个叫qTip的库，这个库非常的强大，但是唯一的缺点是非常的heavy，代码经过YUI压缩了之后还有30多个kb，完全把jQuery轻的特性给摧毁了。 最近找到一个非常小巧玲珑的库， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,44 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/09/27/recommend-a-jquery-tooltip-library/">推荐一个jQuery的tooltip库</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-09-27T00:00:00+08:00" pubdate data-updated="true">Sep 27<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Tooltip是UI里面比较常见的一个元素，jQuery上的tooltip的库非常多，我之前有用过一个叫<a href="http://craigsworks.com/projects/qtip/">qTip</a>的库，这个库非常的强大，但是唯一的缺点是非常的heavy，代码经过YUI压缩了之后还有30多个kb，完全把jQuery轻的特性给摧毁了。<br/>
+<br/>
+最近找到一个非常小巧玲珑的库，而且自带的样式也挺酷的，叫<a href="http://onehackoranother.com/projects/jquery/tipsy/">Tipsy</a>，名字就起的比较<a href="http://dict.youdao.com/search?q=tipsy&amp;ue=utf8&amp;keyfrom=dict.index#q%3Dtipsy%26ue%3Dutf8%26keyfrom%3Ddict.index">有趣</a>，源代码在github上面，方便针对自己情况进行修改，在这里推荐一下。
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -451,55 +489,6 @@ With all these difficulties, we still managed to finish the excel sheet. After t
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/08/17/ie-conditional-comments-with-haml/">IE Conditional Comments With HAML</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-08-17T00:00:00+08:00" pubdate data-updated="true">Aug 17<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">I am using HAML, SASS with Rails for most of the front end code. I was trying to add some IE conditional CSS include in the header and HTML should look like this:<br/>
-<blockquote>&lt;!&#8211;[if (!IE)|(gte IE 8)]&gt;&lt;!&#8211;&gt;<br/>
-&lt;link href=&#8221;some.css&#8221; media=&#8221;screen&#8221; rel=&#8221;stylesheet&#8221; type=&#8221;text/css&#8221; /&gt;<br/>
-&lt;!&#8211;&lt;![endif]&#8211;&gt;</blockquote><br/>
-It is a little bit different from straightforward IE conditional comments like this:<br/>
-<blockquote>&lt;!&#8211;[if (!IE)|(gte IE 8)]&gt;<br/>
-&lt;link href=&#8221;some.css&#8221; media=&#8221;screen&#8221; rel=&#8221;stylesheet&#8221; type=&#8221;text/css&#8221; /&gt;<br/>
-&lt;![endif]&#8211;&gt;</blockquote><br/>
-The way I implementes in HAML is:<br/>
-<blockquote>/[if (!IE)|(gte IE 8)]<br/>
-!= &#8220;&lt;!&#8211;&gt;&#8221;<br/>
-= stylesheet_link_tag &#8216;some&#8217;, :media =&gt; &#8216;screen&#8217;<br/>
-!= &#8220;&lt;!&#8211;&#8221;</blockquote><br/>
-I am not sure if there is an easier way to do this in HAML, but my solution works!
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -517,6 +506,10 @@ I am not sure if there is an easier way to do this in HAML, but my solution work
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library/">CocoaPods Tip #1: How To Use Edge Version of A Library?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/07/how-much-time-did-it-take-us-to-register-the-company-in-china/">How much time did it take us to register the company in China?</a>
       </li>
     
@@ -530,10 +523,6 @@ I am not sure if there is an easier way to do this in HAML, but my solution work
     
       <li class="post">
         <a href="/blog/2011/11/19/failure-of-retargeting/">Failure of Retargeting</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/10/i-am-back/">I am back!</a>
       </li>
     
   </ul>

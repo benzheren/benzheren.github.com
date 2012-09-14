@@ -9,9 +9,7 @@
   <meta name="author" content="Zheren (Ben) Hu">
 
   
-  <meta name="description" content="2 months!!!
-For more info, please check here (sorri, it is in Chinese =P)
-">
+  <meta name="description" content="I am using CocoaPods to manage my iOS project. Because a lot of iOS libraries are open source, sometimes you have to use the edge version of the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +76,47 @@ For more info, please check here (sorri, it is in Chinese =P)
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library/">CocoaPods Tip #1: How to Use Edge Version of a Library?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-14T10:55:00+08:00" pubdate data-updated="true">Sep 14<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I am using <a href="http://cocoapods.org/">CocoaPods</a> to manage my iOS project. Because a lot of iOS libraries are open source, sometimes you have to use the edge version of the library to get the latest pathes to make things work. If you read through articles on the <a href="https://github.com/CocoaPods/CocoaPods/wiki/Dependency-declaration-options">project wiki</a>, and it seems to be pretty easy and just like how developers do in Gemfile:</p>
+
+<pre><code>pod 'LibName', :git =&gt; 'https://url/of/the/github/repo'
+</code></pre>
+
+<p>If you try to enter <code>pod install</code>, it probably won&#8217;t work the way you expect: you will still use the old library. So the easiest way to solve this problem is to <strong>delete your Pods director</strong> and do <code>pod install</code>. And this is still the way to make it work for CocoaPods 0.14.0.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -472,44 +511,6 @@ The following week will be very critical, since the program is close to the end 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/27/recommend-a-jquery-tooltip-library/">推荐一个jQuery的tooltip库</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-27T00:00:00+08:00" pubdate data-updated="true">Sep 27<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">Tooltip是UI里面比较常见的一个元素，jQuery上的tooltip的库非常多，我之前有用过一个叫<a href="http://craigsworks.com/projects/qtip/">qTip</a>的库，这个库非常的强大，但是唯一的缺点是非常的heavy，代码经过YUI压缩了之后还有30多个kb，完全把jQuery轻的特性给摧毁了。<br/>
-<br/>
-最近找到一个非常小巧玲珑的库，而且自带的样式也挺酷的，叫<a href="http://onehackoranother.com/projects/jquery/tipsy/">Tipsy</a>，名字就起的比较<a href="http://dict.youdao.com/search?q=tipsy&amp;ue=utf8&amp;keyfrom=dict.index#q%3Dtipsy%26ue%3Dutf8%26keyfrom%3Ddict.index">有趣</a>，源代码在github上面，方便针对自己情况进行修改，在这里推荐一下。
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -525,6 +526,10 @@ The following week will be very critical, since the program is close to the end 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library/">CocoaPods Tip #1: How To Use Edge Version of A Library?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/07/how-much-time-did-it-take-us-to-register-the-company-in-china/">How much time did it take us to register the company in China?</a>
       </li>
     
@@ -538,10 +543,6 @@ The following week will be very critical, since the program is close to the end 
     
       <li class="post">
         <a href="/blog/2011/11/19/failure-of-retargeting/">Failure of Retargeting</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/11/10/i-am-back/">I am back!</a>
       </li>
     
   </ul>
