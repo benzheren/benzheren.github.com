@@ -3,8 +3,8 @@ layout: post
 title: "CocoaPods Tip #1: How To Use Edge Version of A Library?"
 date: 2012-09-14 10:55
 comments: true
-categories: [iOS, Software]
-tags: [iOS CocoaPods Github]
+categories: [Technology, English]
+tags: [iOS, CocoaPods, Github]
 ---
 
 I am using [CocoaPods](http://cocoapods.org/) to manage my iOS project. Because a lot of iOS libraries are open source, sometimes you have to use the edge version of the library to get the latest pathes to make things work. If you read through articles on the [project wiki](https://github.com/CocoaPods/CocoaPods/wiki/Dependency-declaration-options), and it seems to be pretty easy and just like how developers do in Gemfile: 
