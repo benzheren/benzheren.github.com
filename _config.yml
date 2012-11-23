@@ -97,3 +97,7 @@ google_analytics_tracking_id: 'UA-34392290-1'
 
 # Facebook Like
 facebook_like: false
+
+# Weibo
+weibo_user: 2112007295
+weibo_share_button: true
