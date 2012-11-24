@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Startup | Don't work. Be hated. Love someone.]]></title>
   <link href="http://zheren.hu/blog/categories/startup/atom.xml" rel="self"/>
   <link href="http://zheren.hu/"/>
-  <updated>2012-11-24T20:32:01+08:00</updated>
+  <updated>2012-11-24T20:44:52+08:00</updated>
   <id>http://zheren.hu/</id>
   <author>
     <name><![CDATA[Zheren (Ben) Hu]]></name>
@@ -41,6 +41,116 @@
 <p>我去做蛋糕的那天，看到了墙上不少之前客人的照片，但是那天老板并没有给在场的客人拍照，在和他聊这篇博客的内容前，他总共没说几句话，似乎热情对他而言是很久远的事情了。他说，小时候看蛋糕师傅做蛋糕的时候，就喜欢上了，没想到长大后糕点也成为了自己的事业。但经过这几年来，他觉得累了，但也懒得去改变现状。“毁掉一个人爱好最好的方法就是把爱好变成事业”这句话可能说的就是他现在的心境。</p>
 
 <p>当我提着做完的蛋糕，走在初冬的上海街头，我在想，我会有一个什么样的故事呢？</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[活着]]></title>
+    <link href="http://zheren.hu/blog/2011/10/08/alive/"/>
+    <updated>2011-10-08T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/10/08/alive</id>
+    <content type="html"><![CDATA[<p>今天我刚听说我在旧金山时候的室友，把他现在在做的一个<a href="http://www.kickstarter.com/projects/peterseid/romo-the-smartphone-robot">初创企业的项目</a>放到了<a href="http://kickstarter.com">Kickstarter</a>上（国内的<a href="http://demohour.com">点名时间</a>就是受到这个网站启发的说），他们把链接发到了HackerNews上，顿时排名很高，现在还位居前20的样子，而且他们募集的速度也很快，我觉得完成他们的目标绝对没有问题。我个人一直觉得我的室友是一个很有设计天赋和创意的人，他们的产品利用Kickstarter这个平台，是个非常好的想法，既可以融到一些他们需要的资金，也可以找到他们产品的第一批客户，只要他们的产品一推出，这些投钱给他们的人（多半也是极客）就可以成为免费帮他们做宣传的渠道。<br/></p>
+
+<br/>
+
+
+<p>和我室友简单聊了一下，他们想到了Kickstarter的，也是因为他们的产品比较慢热，在最近的和投资人聊天和融资的过程中，不是非常顺利，所以他们想到了这个方法。这个让我想到了Airbnb的创始人故事，简单的说就是他们成立Airbnb的很长一段时间（超过一年吧），网站的流量很低，创始人看着自己的积蓄一天比一天少，但是他们并没有放弃这个想法，还是要坚持下去，这时正好碰上了美国08年的总统大选，他们就设计了Obama和McCain的漫画形象的早餐麦片来卖（有兴趣的可以去Fred Wilson的<a href="http://www.avc.com/a_vc/2011/03/airbnb.html">博客上</a>看看麦片的样子）。就是这点坚持和韧劲，打动了PG，Airbnb进了YC 09年的batch，之后的故事可能大家都知道了。很多时候一个慢热型的公司会被很多人忽略，包括USV的Fred Wilson也说，当时错过了Airbnb，没有投资，是一个很大的失误，他留下了一盒麦片来提醒自己。<br/></p>
+
+<br/>
+
+
+<p>在创业的路上，大部分人都不会理解你，对于一个创业公司而言，重要的是有坚持活下去的韧性，特别在国内现在的投资环境，如果你们是个慢热的公司，可能会抬眼看一下你们的人不多，不过说一句比较老套的话：“是金子总是会发亮的”。最后用PG的一句话结尾：<br/></p>
+
+<blockquote>I've been surprised again and again by just how much more important persistence is than raw intelligence.          ——PG</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Status Update: Week #9]]></title>
+    <link href="http://zheren.hu/blog/2011/10/03/status-update-week-9/"/>
+    <updated>2011-10-03T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/10/03/status-update-week-9</id>
+    <content type="html"><![CDATA[<p>Alright, this is week #9 and it is Monday today ( I have to check the calendar to make sure that I am correct because of the National Day holidays in China). Usually Matt wrote weekly status update on Mondays, but he was sick from yesterday and pretty busy, so it is my turn to write a weekly update. I cannot guarantee the same quality of English, but I will try to keep the style.<br/></p>
+
+<br/>
+
+
+<p>The past week was an interesting week. As some of you might know, my post from last week about the short weekend trip in Shanghai <a href="http://cn.technode.com/archives/4853/">got reposted</a> by <a href="http://cn.technode.com">Technode</a> Chinese site. It was a pretty exciting thing for me, since it is probably the first time in my life that my writing gets picked by some journalists.  Since they mentioned my name in the repost, it was the publicity for our startup. It is a good start and we need more when we are ready to show the world what we are building. =D<br/></p>
+
+<br/>
+
+
+<p>Other than the exciting news, last week we spent most of time working on the weekly release. We got quite a few <a href="https://www.miihuu.com/thankyou">feedback</a> and found out problems ourselves as well. This involves both front-end UI improvements and make the backend more stable and self healing when problems came up so that we wont keep ourselves up in the near future. Although there are very few users in the system, it helps to discover problems which we may not be able to catch early if only two of us are using the system. Since we tried to stick with the mid-week release date, we had to push a backend stability issue into a hotfix. We successfully finished both the release and hotfix before we headed back to Shanghai for the national holidays. Since we need to meet some people during the holidays, we decided to work in Shanghai for most of time and go out when we need to.<br/></p>
+
+<br/>
+
+
+<p>The following week will be very critical, since the program is close to the end which means the final demo day is coming. We expect to spend quite a few time on dealing with demo preparation and company set-up stuff which will prevent us moving as fast as we did before on the product development. Thus we try to get our product in a good state in the following week, time to write more code and look forward to a new exciting week!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[if 北京 is 硅谷 then 上海 is 纽约？]]></title>
+    <link href="http://zheren.hu/blog/2011/09/26/if-beijing-is-the-valley-then-shanghai-is-new-york/"/>
+    <updated>2011-09-26T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/09/26/if-beijing-is-the-valley-then-shanghai-is-new-york</id>
+    <content type="html"><![CDATA[<p>上个星期周中的时候回了一次上海，我们一般很少周中回去，这次主要是去参加一些上海当地的和创业有关的活动，也想更多的了解一下上海本地创业的氛围。<br/></p>
+
+<br/>
+
+
+<p>第一个活动是在上海老美术馆顶楼的一个露天法国餐厅举行的酒会，主办方是在startup的世界里面非常有名的金融机构<a href="http://www.svb.com">SVB</a>。我和Matt能够有幸参与这个活动，完全就是靠了初生牛犊不怕虎和SVB自荐的勇气，其实这个活动是个很小范围的活动，到场的也就60多人而已，有来自上海本地的一些投资机构，还有很多科技界和上海本地的创业者，我们作为一个6个星期大的创业公司能够受到邀请，我们也感到很幸运，也要感谢SVB。因为SVB的国际背景，活动的参与者非常国际化，遇到了不少之前在网路上关注的上海本地的互联网人士，比如<a href="http://technode.com">动点科技</a>，<a href="http://qifang.cn">齐放平台</a>，<a href="http://youren.me">有人网</a>的创始人等都在，还有一些本地的和我们一样刚刚创立没多久的公司，更巧的是还遇到了Arizona的校友，现在在北京做一个和高尔夫有关的互联网公司。最大感受是上海，或者说是中国，吸引了来自全世界各地的创业者，在会场遇到的就有来自美国，欧洲，印度等地的在上海创业。活动的主题是SVB正在筹划和浦发银行在上海建立一个JV，为了这个JV，SVB的现任董事会主席放弃退休，亲自搬到上海负责这个JV，可见SVB对于中国这个市场的重视；期间，SVB的董事会主席，Symbio的创始人Jacob（来自美国），土豆网的联合创始人Marc（来自欧洲）进行了一个panel discussion，谈论在中国创业的种种话题，其中Marc提到的一点非常有趣（我意译成中文了）：<br/></p>
+
+<blockquote>我刚去过一次硅谷，在硅谷我遇到的创业者，整天都是面带笑容的，然而在中国我遇到的创业者，似乎整天都是愁眉苦脸的。可能的原因是，硅谷的创业者大多都是在做自己喜欢的产品，把产品做好，然后考虑赚钱；而在中国的创业者，往往不是选择自己喜欢的东西创业，而是选择什么红做什么，很快就想怎么才能monetize，他们想的是只要赚钱了，有钱了，他就开心了。</blockquote>
+
+
+<br/>
+
+
+<p>上面的这段体会，不得不说的确是反映出了一些问题，这也就难怪在中国会有“千团大战”了，真的有这么多人喜欢做团购这件事情吗？QA环节，Matt问了一个关于怎么选投资人的问题，场上的几位大牛回答中都提到的一点是：<br/></p>
+
+<blockquote>很多时候，你有的选投资人，就很幸运了。</blockquote>
+
+
+<br/>
+
+
+<p>之后的法国大餐，大家最后发现是vegetarian的选项分量最大，结果是大部分人都没吃饱（细细想来，我过往每次吃法国菜，貌似都没吃饱过呀），不过大家都只是顾着交流聊天，所以问题也不大的说。<br/></p>
+
+<br/>
+
+
+<p>相比较SVB的晚宴，周末的BarCamp Shanghai的活动就草根很多了，一帮极客（geek的中文说法）聚集到创智天地，一天的时间，只要你有想法，有创意，就可以挑一个会议室，然后花30分钟时间和下面有兴趣的人交流，遇到了不少年轻的充满激情的草根创业者。下午和人有约，约的地点竟然就在新开的中国最大的Apple Store对面，一个5层楼的Apple Store不得不说是非常令人震撼啊，更令人震撼的人，不论多大的Apple Store，都可以被挤得满满的说。<br/></p>
+
+<br/>
+
+
+<p>上海之行，见到了很多本地创业者，我们也有问他们为什么选择在上海，而没有选择在北京。有的人说他们觉得上海好住，要选自己觉得喜欢的地方，而且只要你好好找，自己产品做的好，还是能够吸引到人才的；有的人则说，互联网服务产业，应该要到北京去，在上海的话很多时候可能就会out of loop了。是个仁者见仁，智者见智的问题，给我们的感觉是，如果说中国的硅谷在北京，那上海是不是像纽约一样，作为一个同时拥有资本和人口的金融中心，在Web 2.0和社会化网络盛行的时代，渐渐开始成为一个新的互联网创业公司的中心呢？</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[天使日]]></title>
+    <link href="http://zheren.hu/blog/2011/09/18/angel-day/"/>
+    <updated>2011-09-18T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/09/18/angel-day</id>
+    <content type="html"><![CDATA[<p>天使日已经过去3天了，过去的两天都花在改进在天使日中所发现的问题上了，今天是星期天，在经历了打篮球，做按摩和打瞌睡之后，决定静下心对天使日做一个简单的总结。<br/></p>
+
+<br/>
+
+
+<p>天使日是可以说是第二个Milestone，也恰好发生在整个活动的midpoint的时候。即使有的团队之前已经pivot了好几次，但是在这个时候也基本上确定了方向；另外，和上次<a title="Prototype Day" href="http://9kmiles.wordpress.com/2011/08/26/prototype-day/">原型日</a>听众基本都是内部人员不同的是，这次有外部的几个机构投资的高层到场作为听众。所以从一开始，大家都像打了鸡血一样，非常重视，早早地开始做准备，这也是和上次非常不同的一点。上次我们是临时做了一个Slides，这次我们提早一个星期决定了整体的内容架构和Slides的初稿，做了好几次展示，听取了很多意见，进行修改，也做了很多的排练。在形式上，这次每个团队只有8分钟时间，没有Q&amp;A环节，而且会严格控制时间。<br/></p>
+
+<br/>
+
+
+<p>下午两点多，在所有人都到场之后，天使日活动正是拉开了序幕，我们仍旧是第7个出场的，在观摩了之前的6个团队之后，不得不说有准备和没准备是有非常大的区别。大家不论是从Slides的质量上，还是在演说的内容上，都有了一个质的飞跃，每个团队也渐渐体现出了自己的风格。我们是中场休息前的最后一个团队，因为在排练过程中我们大概能够在7分15秒左右完成整个内容，所以我们临时加了一些内容，我也有意放慢了节奏，结果我们用时正正好好是8分钟，显得非常有时间观=D。下半场的团队也是给大家带来了一个又一个惊喜，很多团队都做了很好的定位，把自己团队很产品有优势的地方体现出来了。特别是最后一个出场的团队，演讲非常有激情，把自己团队的特色很好的体现出来了，让大家觉得这样一个团队做这个产品是靠谱的，可以说是一个非常好的压轴。在其他所有团队的展示中，给我留下印象比较深刻的是两个都pivot过的团队：一个现在在做LBS的应用，他们团队的美工不错，很喜欢他们整个slides和产品的色彩风格，觉得看着很舒服，虽然鄙人我不怎么会用PS和AI，但还懂得些配色和欣赏；另外一个团队pivot了有2次，就是上次我说的想做一个给程序员使用的应用的团队，现在他们在做一个和随机有关的产品（具体内容我就不剧透了，大家拭目以待吧），这次的展示，他们做的非常出色，不仅把他们团队的特色体现出来了（一个hacker团队，做过很多小项目，有些项目现在还有1万多流量），而且把他们新产品的功能体现的淋漓尽致，而且充满了互动和笑点，很赞！<br/></p>
+
+<br/>
+
+
+<p>随后的一个多小时，是投资人和团队的自由互动时间，我们有幸和各个投资人都做了不错的交流，他们提出了很多有趣的问题，有的是对我们产品的质疑，有的是对我们产品的不理解，不论怎样，有些问题体现出我们的展示做的很不到位，给我们自己敲响了警钟。我们之前是希望这个demo可以强调产品，比较少的做其他的解释，所以我们花了相当多的时间展示我们5个多星期以来做的产品，不过经过反馈，发现效果其实并不是很好，同时我们从其他团队上也学到了很多东西，我们的脑海里面已经对下一个demo有了几个基本的框架，希望能够解决很多问题。个人觉得和投资人的交流能够很好的帮助我们发现问题，因为团队之间有时候已经非常了解了，不一定能提出好的问题，但是投资人提出的问题，却能帮助你意识到你的欠缺之处。</p>
 ]]></content>
   </entry>
   

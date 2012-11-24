@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: TSW | Don't work. Be hated. Love someone.]]></title>
+  <link href="http://zheren.hu/blog/categories/tsw/atom.xml" rel="self"/>
+  <link href="http://zheren.hu/"/>
+  <updated>2012-11-24T20:44:52+08:00</updated>
+  <id>http://zheren.hu/</id>
+  <author>
+    <name><![CDATA[Zheren (Ben) Hu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Status Update: Week #9]]></title>
+    <link href="http://zheren.hu/blog/2011/10/03/status-update-week-9/"/>
+    <updated>2011-10-03T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/10/03/status-update-week-9</id>
+    <content type="html"><![CDATA[<p>Alright, this is week #9 and it is Monday today ( I have to check the calendar to make sure that I am correct because of the National Day holidays in China). Usually Matt wrote weekly status update on Mondays, but he was sick from yesterday and pretty busy, so it is my turn to write a weekly update. I cannot guarantee the same quality of English, but I will try to keep the style.<br/></p>
+
+<br/>
+
+
+<p>The past week was an interesting week. As some of you might know, my post from last week about the short weekend trip in Shanghai <a href="http://cn.technode.com/archives/4853/">got reposted</a> by <a href="http://cn.technode.com">Technode</a> Chinese site. It was a pretty exciting thing for me, since it is probably the first time in my life that my writing gets picked by some journalists.  Since they mentioned my name in the repost, it was the publicity for our startup. It is a good start and we need more when we are ready to show the world what we are building. =D<br/></p>
+
+<br/>
+
+
+<p>Other than the exciting news, last week we spent most of time working on the weekly release. We got quite a few <a href="https://www.miihuu.com/thankyou">feedback</a> and found out problems ourselves as well. This involves both front-end UI improvements and make the backend more stable and self healing when problems came up so that we wont keep ourselves up in the near future. Although there are very few users in the system, it helps to discover problems which we may not be able to catch early if only two of us are using the system. Since we tried to stick with the mid-week release date, we had to push a backend stability issue into a hotfix. We successfully finished both the release and hotfix before we headed back to Shanghai for the national holidays. Since we need to meet some people during the holidays, we decided to work in Shanghai for most of time and go out when we need to.<br/></p>
+
+<br/>
+
+
+<p>The following week will be very critical, since the program is close to the end which means the final demo day is coming. We expect to spend quite a few time on dealing with demo preparation and company set-up stuff which will prevent us moving as fast as we did before on the product development. Thus we try to get our product in a good state in the following week, time to write more code and look forward to a new exciting week!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[天使日]]></title>
+    <link href="http://zheren.hu/blog/2011/09/18/angel-day/"/>
+    <updated>2011-09-18T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/09/18/angel-day</id>
+    <content type="html"><![CDATA[<p>天使日已经过去3天了，过去的两天都花在改进在天使日中所发现的问题上了，今天是星期天，在经历了打篮球，做按摩和打瞌睡之后，决定静下心对天使日做一个简单的总结。<br/></p>
+
+<br/>
+
+
+<p>天使日是可以说是第二个Milestone，也恰好发生在整个活动的midpoint的时候。即使有的团队之前已经pivot了好几次，但是在这个时候也基本上确定了方向；另外，和上次<a title="Prototype Day" href="http://9kmiles.wordpress.com/2011/08/26/prototype-day/">原型日</a>听众基本都是内部人员不同的是，这次有外部的几个机构投资的高层到场作为听众。所以从一开始，大家都像打了鸡血一样，非常重视，早早地开始做准备，这也是和上次非常不同的一点。上次我们是临时做了一个Slides，这次我们提早一个星期决定了整体的内容架构和Slides的初稿，做了好几次展示，听取了很多意见，进行修改，也做了很多的排练。在形式上，这次每个团队只有8分钟时间，没有Q&amp;A环节，而且会严格控制时间。<br/></p>
+
+<br/>
+
+
+<p>下午两点多，在所有人都到场之后，天使日活动正是拉开了序幕，我们仍旧是第7个出场的，在观摩了之前的6个团队之后，不得不说有准备和没准备是有非常大的区别。大家不论是从Slides的质量上，还是在演说的内容上，都有了一个质的飞跃，每个团队也渐渐体现出了自己的风格。我们是中场休息前的最后一个团队，因为在排练过程中我们大概能够在7分15秒左右完成整个内容，所以我们临时加了一些内容，我也有意放慢了节奏，结果我们用时正正好好是8分钟，显得非常有时间观=D。下半场的团队也是给大家带来了一个又一个惊喜，很多团队都做了很好的定位，把自己团队很产品有优势的地方体现出来了。特别是最后一个出场的团队，演讲非常有激情，把自己团队的特色很好的体现出来了，让大家觉得这样一个团队做这个产品是靠谱的，可以说是一个非常好的压轴。在其他所有团队的展示中，给我留下印象比较深刻的是两个都pivot过的团队：一个现在在做LBS的应用，他们团队的美工不错，很喜欢他们整个slides和产品的色彩风格，觉得看着很舒服，虽然鄙人我不怎么会用PS和AI，但还懂得些配色和欣赏；另外一个团队pivot了有2次，就是上次我说的想做一个给程序员使用的应用的团队，现在他们在做一个和随机有关的产品（具体内容我就不剧透了，大家拭目以待吧），这次的展示，他们做的非常出色，不仅把他们团队的特色体现出来了（一个hacker团队，做过很多小项目，有些项目现在还有1万多流量），而且把他们新产品的功能体现的淋漓尽致，而且充满了互动和笑点，很赞！<br/></p>
+
+<br/>
+
+
+<p>随后的一个多小时，是投资人和团队的自由互动时间，我们有幸和各个投资人都做了不错的交流，他们提出了很多有趣的问题，有的是对我们产品的质疑，有的是对我们产品的不理解，不论怎样，有些问题体现出我们的展示做的很不到位，给我们自己敲响了警钟。我们之前是希望这个demo可以强调产品，比较少的做其他的解释，所以我们花了相当多的时间展示我们5个多星期以来做的产品，不过经过反馈，发现效果其实并不是很好，同时我们从其他团队上也学到了很多东西，我们的脑海里面已经对下一个demo有了几个基本的框架，希望能够解决很多问题。个人觉得和投资人的交流能够很好的帮助我们发现问题，因为团队之间有时候已经非常了解了，不一定能提出好的问题，但是投资人提出的问题，却能帮助你意识到你的欠缺之处。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Prototype Day]]></title>
+    <link href="http://zheren.hu/blog/2011/08/26/prototype-day/"/>
+    <updated>2011-08-26T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/08/26/prototype-day</id>
+    <content type="html"><![CDATA[<p>昨晚是3个月活动的第一个milestone：Prototype Day 原型日。就是每个团队利用10分钟时间(5分钟demo，5分钟问答)向在场的所有团队介绍他们的产品，然后把目前为止做好的原型展示一下，每个团队会对其他团队的项目进行投票：如果你是VC，你会不会投这个项目。<br/></p>
+
+<br/>
+
+
+<p>因为之前的2个半星期，我们都是按照一个很好的计划在进行我们的开发，所以从产品原型角度而言，我们已经做好了充分的准备，但是我们还是比较犹豫是不是要相对正式地做Slides。活动是6点半开始，我们在近5点半的时候决定还是需要做一个简单的Slides，这样可以很好的帮助我们整理思路，毕竟5分钟的Demo并不是非常充裕。我们三下五除二的把一些基本的信息和重点放在一起，做了一个大概5页左右的Slides。<br/></p>
+
+<br/>
+
+
+<p>活动开始后，到场的除了团队所有人，还有家属，2个VC的代表，科技博客的代表，还有一些杭州本地创业公司的CEO，人气很旺，房间里面的温度陡然上升。我们是第7号，当我在演示电脑上准备我们的slides的时候，Matt用夹生的中文介绍了自己，希望能找个中文的tutor，帮助带动了整个气氛，当我开始说的时候，因为小紧张，语速还是有点快 ，但是还是花了将近7分钟时间才完成了Demo和Slides，期间因为我们还没有备案，为了找到我们的网站的ip地址小耽搁了一会；在问答环节，我们还是很好的控制了时间，基本上在刚过10分钟的时候结束了整个流程。下场后，觉得我们在控制时间方面还是不错，亏得Matt在旁边计时。<br/></p>
+
+<br/>
+
+
+<p>经过近3个小时，所有团队完成了演示，每个团队都把他们想做什么告诉了大家，一些团队进度比较快，产品已经很具规模了，一些团队可能还在刚起步的阶段。大家都有很不错的想法，我对其中一支立志做互联网基础应用，针对程序员需求的团队非常佩服，大部分的团队可能都是做面对最终用户的产品，不论是Social，Local还是Mobile，很多这样的公司一旦抓对了用户的需求，可能都会得到比较多的媒体的青睐，你可以看到你的名字出现在各大媒体；但是对于做互联网基础应用，特别是针对开发人员的应用，可能更有点像无名英雄，在技术上其实这样的应用需要更强大的技术背景（比如像AWS和GAE），特别是在中国这样一个互联网基础落后美国至少10年的情况下，这个不仅仅只是阿里云和盛大云应该做的事情，我们更需要有创业的团队敢于去做这样一件事情，在此向他们致敬。<br/></p>
+
+<br/>
+
+
+<p>昨天的演讲是我很长时间内的第一次，以后会有更多这样的场合，我想说的是，这些年来所积累的些许对于做slides和演讲的经验，都要感谢本科时候<a href="http://www1.cs.sjtu.edu.cn/people_detail.action?id=19">俞勇老师</a>从大一就开始培养我们，<a href="http://www.sjtu.edu.cn">饮水当思源</a>。</p>
+]]></content>
+  </entry>
+  
+</feed>

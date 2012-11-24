@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Advertisting | Don't work. Be hated. Love someone.]]></title>
+  <link href="http://zheren.hu/blog/categories/advertisting/atom.xml" rel="self"/>
+  <link href="http://zheren.hu/"/>
+  <updated>2012-11-24T20:44:52+08:00</updated>
+  <id>http://zheren.hu/</id>
+  <author>
+    <name><![CDATA[Zheren (Ben) Hu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Failure of Retargeting]]></title>
+    <link href="http://zheren.hu/blog/2011/11/19/failure-of-retargeting/"/>
+    <updated>2011-11-19T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/11/19/failure-of-retargeting</id>
+    <content type="html"><![CDATA[<p>Retargeting is a very common technique in online advertising business these days, but it is a very simple technology. Sometimes it "magically" brings high lift for advertising, but because of its simplicity, it can cause some epic fail.<br/></p>
+
+<br/>
+
+
+<p>I have been using NewRelic services these days, so I go to its site pretty often. Today when I was reading an article on 9to5mac.com, I found out that there are 8 ads about NewRelic on the same page for me. It is not 1, not 2, not 4, IT IS EIGHT ads about the same company. And these 8 ads almost have the same creative. Seriously?! Really?!<br/></p>
+
+<br/>
+
+
+<p>I am not able to take a full screen shot of this page, but this page is a great example of epic failure of retargeting.</p>
+]]></content>
+  </entry>
+  
+</feed>

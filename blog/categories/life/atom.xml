@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Life | Don't work. Be hated. Love someone.]]></title>
+  <link href="http://zheren.hu/blog/categories/life/atom.xml" rel="self"/>
+  <link href="http://zheren.hu/"/>
+  <updated>2012-11-24T20:44:52+08:00</updated>
+  <id>http://zheren.hu/</id>
+  <author>
+    <name><![CDATA[Zheren (Ben) Hu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My experiences with Chinese Major Banks (for Expats and Returnees)]]></title>
+    <link href="http://zheren.hu/blog/2011/12/15/my-experiences-with-chinese-major-banks-for-expats-and-returnees/"/>
+    <updated>2011-12-15T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/12/15/my-experiences-with-chinese-major-banks-for-expats-and-returnees</id>
+    <content type="html"><![CDATA[<p>I have been in China for about 4 months and half now and I am "honored" to have the opportunity to deal with several major local banks in China. As you may know, China banking system are mainly controlled by four major national-owned banks: ICBC, CCB, ABC and BOC. I dealt with three of them in 4 months: ICBC, ABC and CCB.<br/></p>
+
+<br/>
+
+
+<p>Let me start with ICBC. It is the largest of four, so when I wanted to open an account in Hangzhou, I decided to go to ICBC first for the brand. Unfortunately because of the <a title="工行开户趣闻" href="http://9kmiles.wordpress.com/2011/08/14/%e5%b7%a5%e8%a1%8c%e5%bc%80%e6%88%b7%e8%b6%a3%e9%97%bb/">stupidity of their banking system</a>, they had my name wrong in their system for the account I had in college. Because of that, I would not be able to open any new account with ICBC throughout the country unless I went back to that original branch and change my name in the system with my ID. (Notes: China banks are very fragmented, e.g. ICBC Shanghai is kinda independent from ICBC ZheJiang Province, which means I cannot do that name change thing in Hangzhou). And after that I had to go to ICBC twice because our server provider uses them as their bank. I did the exact same transaction in two different branches in Shanghai and they follow totally different workflow. And in order to do a simple transaction, I had to talk to 2 different staff. The process is horrible.<br/></p>
+
+<br/>
+
+
+<p>For ABC, after I got turned down by ICBC and I ended opening the account in ABC. The staff is pretty friendly and I opened my online banking as well in order to use my account for online payment with Alipay. In China, online banking is still not that popular, so you have to pay some money to open it. And because of pirated software, the internet security is pretty bad as well. Thus when you open online banking account, they will give you a USB drive with security token in it and you have to use it every time you access online banking and doing online payment. So for the security USB drive from ABC, the good part is it works pretty well with VirtualBox under Mac OS X. (Yeah, those USB drives only work under Windows, so if you have a Mac like me, congratulations! You either need to do bootcamp or go with VirtualBox). Fortunately as I said, ABC one works with VirtualBox. After I opened the account with ABC, I started to experience the bad part, their online banking system sucks! I have experiences several failures when I tried to do online payment. And it was not even in their peak time during Taobao sale. It was really annoying. I am sure ABC spends a lot of money on their system, but I have to say it does not work very well at all!<br/></p>
+
+<br/>
+
+
+<p>CCB, the second among the four banks, with which I have both business account and personal account with them. For the personal account, everything seems to be cool, but I have problem with their security USB token. It does not work with VirtualBox at all. I did some Google search and it turns out it only works with VMWare Phusion. I guess this is called "You get what you pay for". Since I don't wanna buy or install a pirated VMWare software, I have to use my old school ThinkPad T60 to do transactions now. For the business account, different branches have different levels. I went to one branch to do some deposit, I told the teller to put the correct reason for the money, but in the end she still put the wrong reason for it. Luckily that did not cause any problem for the money to go through, otherwise I would have had to do it twice.<br/></p>
+
+<br/>
+
+
+<p>For my readers, key takeaways from my own experiences(highly biased) are:<br/></p>
+
+<ul><br/>
+    <li>If you use VirtualBox on Mac, try not to use CCB. And ABC one works pretty well!</li><br/>
+    <li>ICBC services suck! Maybe because they are No. 1 and they do not need to improve anymore. You cannot become No. 0 like it is in computer system, right?</li><br/>
+    <li>ABC services are good for me, but the bankend system prolly is the worst.</li><br/>
+    <li>All these banks are very inefficient and it takes you in average 30 minutes to do a simple business there. And overall their technology is behind their US peers.</li><br/>
+</ul>
+
+
+<br/>
+
+
+<p>&nbsp;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[公司注册的那点事儿]]></title>
+    <link href="http://zheren.hu/blog/2011/11/26/things-about-company-registration-in-china/"/>
+    <updated>2011-11-26T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/11/26/things-about-company-registration-in-china</id>
+    <content type="html"><![CDATA[<p>大家都知道，在中国注册一家公司是一件很不容易的事情。在米国，任何人开个公司都是轻而易举的事情，不过由于国情不同，在中国是一个非常繁琐的过程，我想通过这篇博文记录一下我注册开公司的过程，看看需要几天才能办完。<br/></p>
+
+<br/>
+
+
+<p>背景：由于我得到了某高新园区的帮助，所以在申请过程中我已经少跑腿N次了，所以不具有完全的代表性，不过即使在这样的情况下，我已经跑了不少次腿了。<br/></p>
+
+<br/>
+
+
+<p>我们从11月16日起正式开始这个过程（之前还和园区办交流过几次，这个就不算了），国内办公司第一步是核名，就是你要提交几个公司的名字，然后工商部门要确定你这些名字可以用，没有公司和你是重名的，在这个过程中，你要把你公司未来的股东的资料都填好，盖章的盖章，签字的签字，这个就已经够麻烦了。我们算运气好，名字没有问题，有些公司名字有问题，还要跑好几次的说。就这样，我们的核名是在11月24日下来的。<br/></p>
+
+<br/>
+
+
+<p>11月25日，也就是北京时间昨天，我去办第二步，就是验资，基本上就是你要去某银行开验资账户，证明你们这些股东是有钱的，然后要把注册资本放进去（我是这么理解的，基本没怎么想去弄明白），这个步骤是个大步骤，不仅要带上烂七八糟一大堆的文件，还基本都要原件，复印件都不可以，必须要本人到场之类的等等。好么，跑到某国有银行一问，说我们缺少一个文件，我们说能通融吗，办事的问了领导说不能，就这样，辛辛苦苦跑到那里，就不能办了。回头问了另外一个某国有银行，那边据说可以办，难道这个都不是统一规定？各个银行都有自己规定？所以只好下个周一再去那里办，下午把未来可能需要的文件，签字的签字，盖章的盖章，还写了一大堆蛋疼的文件，有电子版的，还有手写的，都什么年代了，还手写？！几个小时搞定了文件，就等下周一再办验资户了。（另外，办事的时候身份证出示了N多次，所有人都觉得我和身份证照片差很多，银行的人看了几遍，还好普遍反映是长帅了=D）<br/></p>
+
+<br/>
+
+
+<p>11月28日更新<br/></p>
+
+<br/>
+
+
+<p>今天去开验资户了，早上兴冲冲的跑到银行，可能是星期一的关系，人特别多，还好园区的认识人，我们很快就办上了，结果银行的人发现工商局竟然把某个股东的名字打错了，真是坑爹的很，只好赶回工商局，结果政府机关，大家也知道的，不到下午1点半不开门的，中午休息时间n长的，连我开户的国有银行都在说工商局，你就知道工商局有多牛了。吃个饭，好不容易等到1点半，跑过去，抢了个号，结果1秒钟就改完了，其实就是他们在打印出来的东西上人工改写一下，然后敲章就好了，太神奇了，为啥当初没好好看对呢。工商局出来的路上，竟然还碰到了某风投的公车来办事，看来大家做生意，不论大小，都还是要来朝贡一下的。回到银行，下午人更多，就算认识人也要等，等啊等，等啊等，等到都快下班了，终于轮到我了，还好那个工作人员好，牺牲个人时间给我办业务，一大堆的敲章，一大堆的签字，还要本人到场，并且监控录像直接送到央行，据说都是为了防止银行内部和公司进行勾结非法交易（比如洗钱等）。听银行自己的人说，为了解决新问题，就发明了新规定，但是老规定还在，所以规定越来越多，连银行内部的人都在抱怨，太神奇了。就这样，本来以为半天搞定的事情，搞到太阳下山了才okay，这个才是解决了第二步。<br/></p>
+
+<br/>
+
+
+<p>12月5日更新<br/></p>
+
+<br/>
+
+
+<p>银行验资账户搞定鸟，下一步就是要发一个询证函给某会计师事务所去证明我们的账务是对的，为了这个偶要去搞个我们未成立公司的公章，然后又是签一堆材料，当然最重要的是给钱：银行验资500RMB，会计师账务1000+RMB。下一步之后，就终于等到工商登记了。<br/></p>
+
+<br/>
+
+
+<p>12月15日更新<br/></p>
+
+<br/>
+
+
+<p>貌似一切没有想象中的进行的这么快，会计师事务所那边没有搞定，所以还要再等等，不过好消息是，之后的登记包括工商、机构代码和税务都不需要我亲自出面了，所以我只要耐心等待。估计到消验资户的时候又需要我本人到场了，终于可以消停一会了。<br/></p>
+
+<br/>
+
+
+<p>12月22日更新<br/></p>
+
+<br/>
+
+
+<p>验资已经搞定了，接下来就是销验资户然后开基本户。Can you believe this?! 我千辛万苦地开了一个验资户，就是为了让会计事务所证明我们有钱，我们正经，不是用来洗钱的，然后立马就要把这个验资户给注销，而且还是要所有的证件原本才可以注销，我是十分不明白，虽然有这么多麻烦的步骤，我也没看出来国内洗钱等之类的勾当比国外少多少，哎⋯<br/></p>
+
+<br/>
+
+
+<p>1月9日更新<br/></p>
+
+<br/>
+
+
+<p>首先请注意了，现在已经2012年了！这公司一注册就注册了2年，哎！上周发现缺了一些文件，多费了一些精力去搞定了那些文件，这样终于下周，过年前应该可以拿到我们的三证了，让我们耐心等待⋯⋯<br/></p>
+
+<br/>
+
+
+<p>2月7日更新<br/></p>
+
+<br/>
+
+
+<p>在过年前的1月18日我们终于拿到“了梦寐以求”的三证，之后的1月19日我去经过我精心挑选（这里又可以写个博客了）的银行开了基本户，因为后面一周是过年，所以基本啥事情都没发生，特别是现在所有账户都要央行批准。所以在年后的2月3日，基本户开完了。期间在2月2日还去参加了蛋疼的税务培训，之后还要再注销验资户，把税的事情搞一下，基本上就okay了，到今天为止，整个过程已经要到3个月了，当然中间经过了一个春节。<br/></p>
+
+<br/>
+
+
+<p>未完待续⋯⋯</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[I am back!]]></title>
+    <link href="http://zheren.hu/blog/2011/11/10/i-am-back/"/>
+    <updated>2011-11-10T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/11/10/i-am-back</id>
+    <content type="html"><![CDATA[<p>我终于回归我们的博客了，之前因为wordpress.com被墙，我们又非常的忙，所以我有段时间没有写博客了，现在demo day已经结束了，我们也回到了上海，在<a href="http://v2ex.com">v2ex</a>的版大livid的帮助下，我们找到了一种比较强大的“网络生存方法”，让我轻松回到了wordpress，先留下这篇，之后会把上个星期发生的事情再专门写一篇。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[活着]]></title>
+    <link href="http://zheren.hu/blog/2011/10/08/alive/"/>
+    <updated>2011-10-08T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/10/08/alive</id>
+    <content type="html"><![CDATA[<p>今天我刚听说我在旧金山时候的室友，把他现在在做的一个<a href="http://www.kickstarter.com/projects/peterseid/romo-the-smartphone-robot">初创企业的项目</a>放到了<a href="http://kickstarter.com">Kickstarter</a>上（国内的<a href="http://demohour.com">点名时间</a>就是受到这个网站启发的说），他们把链接发到了HackerNews上，顿时排名很高，现在还位居前20的样子，而且他们募集的速度也很快，我觉得完成他们的目标绝对没有问题。我个人一直觉得我的室友是一个很有设计天赋和创意的人，他们的产品利用Kickstarter这个平台，是个非常好的想法，既可以融到一些他们需要的资金，也可以找到他们产品的第一批客户，只要他们的产品一推出，这些投钱给他们的人（多半也是极客）就可以成为免费帮他们做宣传的渠道。<br/></p>
+
+<br/>
+
+
+<p>和我室友简单聊了一下，他们想到了Kickstarter的，也是因为他们的产品比较慢热，在最近的和投资人聊天和融资的过程中，不是非常顺利，所以他们想到了这个方法。这个让我想到了Airbnb的创始人故事，简单的说就是他们成立Airbnb的很长一段时间（超过一年吧），网站的流量很低，创始人看着自己的积蓄一天比一天少，但是他们并没有放弃这个想法，还是要坚持下去，这时正好碰上了美国08年的总统大选，他们就设计了Obama和McCain的漫画形象的早餐麦片来卖（有兴趣的可以去Fred Wilson的<a href="http://www.avc.com/a_vc/2011/03/airbnb.html">博客上</a>看看麦片的样子）。就是这点坚持和韧劲，打动了PG，Airbnb进了YC 09年的batch，之后的故事可能大家都知道了。很多时候一个慢热型的公司会被很多人忽略，包括USV的Fred Wilson也说，当时错过了Airbnb，没有投资，是一个很大的失误，他留下了一盒麦片来提醒自己。<br/></p>
+
+<br/>
+
+
+<p>在创业的路上，大部分人都不会理解你，对于一个创业公司而言，重要的是有坚持活下去的韧性，特别在国内现在的投资环境，如果你们是个慢热的公司，可能会抬眼看一下你们的人不多，不过说一句比较老套的话：“是金子总是会发亮的”。最后用PG的一句话结尾：<br/></p>
+
+<blockquote>I've been surprised again and again by just how much more important persistence is than raw intelligence.          ——PG</blockquote>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[안녕하세요!]]></title>
+    <link href="http://zheren.hu/blog/2011/09/18/post-in-korean/"/>
+    <updated>2011-09-18T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/09/18/post-in-korean</id>
+    <content type="html"><![CDATA[<p>안녕하세요, 벤과 매트의 블로그 방문을 환영합니다!</p>
+]]></content>
+  </entry>
+  
+</feed>

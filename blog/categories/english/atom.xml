@@ -4,7 +4,7 @@
   <title><![CDATA[Category: English | Don't work. Be hated. Love someone.]]></title>
   <link href="http://zheren.hu/blog/categories/english/atom.xml" rel="self"/>
   <link href="http://zheren.hu/"/>
-  <updated>2012-11-24T20:32:01+08:00</updated>
+  <updated>2012-11-24T20:44:52+08:00</updated>
   <id>http://zheren.hu/</id>
   <author>
     <name><![CDATA[Zheren (Ben) Hu]]></name>
@@ -24,6 +24,110 @@
 </code></pre>
 
 <p>If you try to enter <code>pod install</code>, it probably won't work the way you expect: you will still use the old library. So the easiest way to solve this problem is to <strong>delete your Pods director</strong> and do <code>pod install</code>. And this is still the way to make it work for CocoaPods 0.14.0.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How much time did it take us to register the company in China?]]></title>
+    <link href="http://zheren.hu/blog/2012/02/07/how-much-time-did-it-take-us-to-register-the-company-in-china/"/>
+    <updated>2012-02-07T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2012/02/07/how-much-time-did-it-take-us-to-register-the-company-in-china</id>
+    <content type="html"><![CDATA[<p><strong>2 months!!!</strong></p>
+
+
+<br/>
+
+
+<p>For more info, please check <a title="公司注册的那点事儿" href="http://9kmiles.wordpress.com/2011/11/26/%e5%85%ac%e5%8f%b8%e6%b3%a8%e5%86%8c%e7%9a%84%e9%82%a3%e7%82%b9%e4%ba%8b%e5%84%bf/">here</a> (sorri, it is in Chinese =P)</p>
+
+
+<br/>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My experiences with Chinese Major Banks (for Expats and Returnees)]]></title>
+    <link href="http://zheren.hu/blog/2011/12/15/my-experiences-with-chinese-major-banks-for-expats-and-returnees/"/>
+    <updated>2011-12-15T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/12/15/my-experiences-with-chinese-major-banks-for-expats-and-returnees</id>
+    <content type="html"><![CDATA[<p>I have been in China for about 4 months and half now and I am "honored" to have the opportunity to deal with several major local banks in China. As you may know, China banking system are mainly controlled by four major national-owned banks: ICBC, CCB, ABC and BOC. I dealt with three of them in 4 months: ICBC, ABC and CCB.<br/></p>
+
+<br/>
+
+
+<p>Let me start with ICBC. It is the largest of four, so when I wanted to open an account in Hangzhou, I decided to go to ICBC first for the brand. Unfortunately because of the <a title="工行开户趣闻" href="http://9kmiles.wordpress.com/2011/08/14/%e5%b7%a5%e8%a1%8c%e5%bc%80%e6%88%b7%e8%b6%a3%e9%97%bb/">stupidity of their banking system</a>, they had my name wrong in their system for the account I had in college. Because of that, I would not be able to open any new account with ICBC throughout the country unless I went back to that original branch and change my name in the system with my ID. (Notes: China banks are very fragmented, e.g. ICBC Shanghai is kinda independent from ICBC ZheJiang Province, which means I cannot do that name change thing in Hangzhou). And after that I had to go to ICBC twice because our server provider uses them as their bank. I did the exact same transaction in two different branches in Shanghai and they follow totally different workflow. And in order to do a simple transaction, I had to talk to 2 different staff. The process is horrible.<br/></p>
+
+<br/>
+
+
+<p>For ABC, after I got turned down by ICBC and I ended opening the account in ABC. The staff is pretty friendly and I opened my online banking as well in order to use my account for online payment with Alipay. In China, online banking is still not that popular, so you have to pay some money to open it. And because of pirated software, the internet security is pretty bad as well. Thus when you open online banking account, they will give you a USB drive with security token in it and you have to use it every time you access online banking and doing online payment. So for the security USB drive from ABC, the good part is it works pretty well with VirtualBox under Mac OS X. (Yeah, those USB drives only work under Windows, so if you have a Mac like me, congratulations! You either need to do bootcamp or go with VirtualBox). Fortunately as I said, ABC one works with VirtualBox. After I opened the account with ABC, I started to experience the bad part, their online banking system sucks! I have experiences several failures when I tried to do online payment. And it was not even in their peak time during Taobao sale. It was really annoying. I am sure ABC spends a lot of money on their system, but I have to say it does not work very well at all!<br/></p>
+
+<br/>
+
+
+<p>CCB, the second among the four banks, with which I have both business account and personal account with them. For the personal account, everything seems to be cool, but I have problem with their security USB token. It does not work with VirtualBox at all. I did some Google search and it turns out it only works with VMWare Phusion. I guess this is called "You get what you pay for". Since I don't wanna buy or install a pirated VMWare software, I have to use my old school ThinkPad T60 to do transactions now. For the business account, different branches have different levels. I went to one branch to do some deposit, I told the teller to put the correct reason for the money, but in the end she still put the wrong reason for it. Luckily that did not cause any problem for the money to go through, otherwise I would have had to do it twice.<br/></p>
+
+<br/>
+
+
+<p>For my readers, key takeaways from my own experiences(highly biased) are:<br/></p>
+
+<ul><br/>
+    <li>If you use VirtualBox on Mac, try not to use CCB. And ABC one works pretty well!</li><br/>
+    <li>ICBC services suck! Maybe because they are No. 1 and they do not need to improve anymore. You cannot become No. 0 like it is in computer system, right?</li><br/>
+    <li>ABC services are good for me, but the bankend system prolly is the worst.</li><br/>
+    <li>All these banks are very inefficient and it takes you in average 30 minutes to do a simple business there. And overall their technology is behind their US peers.</li><br/>
+</ul>
+
+
+<br/>
+
+
+<p>&nbsp;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Failure of Retargeting]]></title>
+    <link href="http://zheren.hu/blog/2011/11/19/failure-of-retargeting/"/>
+    <updated>2011-11-19T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/11/19/failure-of-retargeting</id>
+    <content type="html"><![CDATA[<p>Retargeting is a very common technique in online advertising business these days, but it is a very simple technology. Sometimes it "magically" brings high lift for advertising, but because of its simplicity, it can cause some epic fail.<br/></p>
+
+<br/>
+
+
+<p>I have been using NewRelic services these days, so I go to its site pretty often. Today when I was reading an article on 9to5mac.com, I found out that there are 8 ads about NewRelic on the same page for me. It is not 1, not 2, not 4, IT IS EIGHT ads about the same company. And these 8 ads almost have the same creative. Seriously?! Really?!<br/></p>
+
+<br/>
+
+
+<p>I am not able to take a full screen shot of this page, but this page is a great example of epic failure of retargeting.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Status Update: Week #9]]></title>
+    <link href="http://zheren.hu/blog/2011/10/03/status-update-week-9/"/>
+    <updated>2011-10-03T00:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2011/10/03/status-update-week-9</id>
+    <content type="html"><![CDATA[<p>Alright, this is week #9 and it is Monday today ( I have to check the calendar to make sure that I am correct because of the National Day holidays in China). Usually Matt wrote weekly status update on Mondays, but he was sick from yesterday and pretty busy, so it is my turn to write a weekly update. I cannot guarantee the same quality of English, but I will try to keep the style.<br/></p>
+
+<br/>
+
+
+<p>The past week was an interesting week. As some of you might know, my post from last week about the short weekend trip in Shanghai <a href="http://cn.technode.com/archives/4853/">got reposted</a> by <a href="http://cn.technode.com">Technode</a> Chinese site. It was a pretty exciting thing for me, since it is probably the first time in my life that my writing gets picked by some journalists.  Since they mentioned my name in the repost, it was the publicity for our startup. It is a good start and we need more when we are ready to show the world what we are building. =D<br/></p>
+
+<br/>
+
+
+<p>Other than the exciting news, last week we spent most of time working on the weekly release. We got quite a few <a href="https://www.miihuu.com/thankyou">feedback</a> and found out problems ourselves as well. This involves both front-end UI improvements and make the backend more stable and self healing when problems came up so that we wont keep ourselves up in the near future. Although there are very few users in the system, it helps to discover problems which we may not be able to catch early if only two of us are using the system. Since we tried to stick with the mid-week release date, we had to push a backend stability issue into a hotfix. We successfully finished both the release and hotfix before we headed back to Shanghai for the national holidays. Since we need to meet some people during the holidays, we decided to work in Shanghai for most of time and go out when we need to.<br/></p>
+
+<br/>
+
+
+<p>The following week will be very critical, since the program is close to the end which means the final demo day is coming. We expect to spend quite a few time on dealing with demo preparation and company set-up stuff which will prevent us moving as fast as we did before on the product development. Thus we try to get our product in a good state in the following week, time to write more code and look forward to a new exciting week!</p>
 ]]></content>
   </entry>
   
