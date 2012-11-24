@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: 中文 | Don't work. Be hated. Love someone.]]></title>
-  <link href="http://zheren.hu/blog/categories/中文/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Chinese | Don't work. Be hated. Love someone.]]></title>
+  <link href="http://zheren.hu/blog/categories/chinese/atom.xml" rel="self"/>
   <link href="http://zheren.hu/"/>
-  <updated>2012-11-24T00:42:42+08:00</updated>
+  <updated>2012-11-24T20:32:01+08:00</updated>
   <id>http://zheren.hu/</id>
   <author>
     <name><![CDATA[Zheren (Ben) Hu]]></name>
