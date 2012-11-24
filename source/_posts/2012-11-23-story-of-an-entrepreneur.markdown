@@ -3,7 +3,7 @@ layout: post
 title: "一个创业者的故事"
 date: 2012-11-23 16:29
 comments: true
-categories: [Entrepreneur, 中文, Startup]
+categories: [Entrepreneur, Chinese, Startup]
 ---
 
 以下是一个创业者的故事，和他的聊天已经过去几天了，希望我没有漏掉什么细节。

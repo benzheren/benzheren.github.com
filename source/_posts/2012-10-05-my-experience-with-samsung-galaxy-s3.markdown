@@ -3,7 +3,7 @@ layout: post
 title: "三星Galaxy S3使用有感"
 date: 2012-10-05 19:51
 comments: true
-categories: [Technology, 中文]
+categories: [Technology, Chinese]
 tags: [Samsung, Android, Apple, iOS]
 ---
 
