@@ -3,7 +3,7 @@ layout: post
 title: "Pi，朗、雄和轩"
 date: 2012-12-02 23:37
 comments: true
-categories: [Chinese Misc Life]
+categories: [Chinese, Misc, Life]
 ---
 
 不论李安导演怎么淡化，Pi食人了，他吃的是他的弑母仇人：厨师。
