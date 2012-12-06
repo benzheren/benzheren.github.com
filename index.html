@@ -9,7 +9,8 @@
   <meta name="author" content="Zheren (Ben) Hu">
 
   
-  <meta name="description" content="不论李安导演怎么淡化，Pi食人了，他吃的是他的弑母仇人：厨师。 TVB电视剧《天与地》里的朗、雄和轩也食人了，他们和好友明去新疆爬雪山，被困，明生病，生命垂危，3个人饿得神志不清，杀了明，吃了肉，活了下来。 Pi吃了人，但似乎当他漂到墨西哥海岸的时候，他吃人的那一面就似那只老虎一样消失了， &hellip;">
+  <meta name="description" content="I was trying to set up some kind of monitoring system for our soon-to-be-live
+backend system. After some quick research, I decided to use give Munin &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -68,6 +69,8 @@
   
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
+  <li><a href="/blog/categories/english">English Blogs</a></li>
+  <li><a href="/blog/categories/chinese">中文博客</a></li>
   <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
@@ -76,6 +79,192 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/">Munin Setup for Nginx and Mongodb Monitoring on Ubuntu 11.10</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-06T22:00:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I was trying to set up some kind of monitoring system for our soon-to-be-live
+backend system. After some quick research, I decided to use give Munin a try
+since it has pretty good community support for all kinds of plugins.
+Their <a href="munin-monitoring.org/">homepage</a> plus couple google searches help me
+to present the following walkthrough.</p>
+
+<h3>Installation</h3>
+
+<p>Installation is pretty easy on Ubuntu server, for the munin master:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install munin</span></code></pre></td></tr></table></div></figure>
+
+
+<p>for the munin node:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install munin-node munin-plugins-extra</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Configuration</h3>
+
+<h4>munin master</h4>
+
+<p>First you need configure <code>/etc/munin/munin.conf</code>, in general you just need to
+specify the host tree, bascially all munin nodes you want to monitor. Something
+like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[server1.domain.com]
+</span><span class='line'>    address [your_server_ip_address]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>One caveat here is to make sure the server name <code>server1.domain.com</code> you specify
+here matches the configuration later you do on your node. If these two do not
+match, it will not get data at all.</p>
+
+<p>Then you need to make sure your munin monitoring webpage can be accessed. If you
+are using nginx like me, just create a file under
+<code>/etc/nginx/sites-available/munin</code> with config like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>server {
+</span><span class='line'>  listen 80;
+</span><span class='line'>  server_name monitor.domain.com;
+</span><span class='line'>  location / {
+</span><span class='line'>    # Host Based auth
+</span><span class='line'>    #allow 11.12.22.55/32;
+</span><span class='line'>    #deny all;
+</span><span class='line'>    # Passwd auth
+</span><span class='line'>    auth_basic            "Restricted";
+</span><span class='line'>    auth_basic_user_file  munin_auth_pass;
+</span><span class='line'>    root /var/www/munin;
+</span><span class='line'>  }
+</span><span class='line'> }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I am using basic password authentication and for that you need
+to create a password file. For the above configuration, you need to have a file
+<code>/etc/ngnix/munin_auth_pass</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>username:encrypted_password</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you use ruby, the easiest thing to get the encrypted_password would be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>& irb
+</span><span class='line'>1.9.3 :001&gt; "password".crpyt('salt')
+</span><span class='line'>=&gt; "sa3tHJ3/KuYvI"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you are all set to have a munin monitoring page running and password
+proteced at <code>monitor.domain.com</code>.</p>
+
+<h4>munin node</h4>
+
+<p>Munin node, by default, is using port 4949, you can configure it and just make sure the
+port is not blocked by the firewall, which happened to me in the
+beginning. Configure <code>/etc/munin/munin-node.conf</code> and two key configurations are:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>host_name server1.domain.com
+</span><span class='line'>
+</span><span class='line'>allow ^127\.0\.0\.1$
+</span><span class='line'>allow [regex_of_ip_address_of_munin_master]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You need to make sure the host name you set here matches the one you put in your
+munin master conf. Now if you do a <code>sudo service munin-node restart</code>, you should
+be able to see graphs on your munin master for several existing monitor items
+like system, networking and etc.</p>
+
+<p>If you want to monitor more items like nginx and mongodb, you can find most
+third party plugins in <a href="https://github.com/munin-monitoring/contrib/tree/master/plugins/">munin github project</a>. Let&#8217;s say you want to monitor nginx, what you need to do is:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd /usr/share/munin/plugins
+</span><span class='line'>sudo wget -O nginx_combined https://raw.github.com/munin-monitoring/contrib/master/plugins/nginx/nginx-combined
+</span><span class='line'>sudo chmod +x nginx_combined
+</span><span class='line'>sudo ln -s /usr/share/munin/plugins/nginx_combined /etc/munin/plugins/nginx_combined_[munin node ip address]
+</span><span class='line'>sudo service munin-node restart</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And you need to configure <code>/etc/munin/plugin-conf.d/munin-node</code> to add these two
+lines:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[nginx*]
+</span><span class='line'>env.url http://localhost/nginx_status</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can add more plugins with similar approach and different plugins may have
+their own custom config to make sure it gets data correctly.</p>
+
+<p>This whole process took me more than a whole afternoon to figure out, hopefully
+this blog can help you move faster with munin.</p>
+
+<p>Happy monitoring!</p>
+
+<h3>References</h3>
+
+<ul>
+<li><a href="http://play.datalude.com/blog/2012/01/munin-nginx-mysql-ubuntu/">http://play.datalude.com/blog/2012/01/munin-nginx-mysql-ubuntu/</a></li>
+<li><a href="http://www.cowboycoded.com/2011/01/12/password-protect-your-entire-site-with-nginx/">http://www.cowboycoded.com/2011/01/12/password-protect-your-entire-site-with-nginx/</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -530,48 +719,6 @@ I am not able to take a full screen shot of this page, but this page is a great 
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/10/19/how-to-save-chinas-entertainment-business/">拿什么拯救我们的文化产业？</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-19T00:00:00+08:00" pubdate data-updated="true">Oct 19<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content">蛮早就想写这个帖子了，那天和Matt聊天，他，作为一个在中国没有生活多久的人，和我聊到了关于中国如今的文化产业。他的出发点是中国的动漫产业，他是一个动漫爱好者，所以来到中国后也入乡随俗地想看一下中国的动漫，可惜都令他很失望，失望之余，他不禁感叹如今的中国似乎已经没有什么能够向世界输出的文化产业方面的东西了。当我们还在说着中国上下5千年的悠悠历史的时候，我们很多时候说的还是过去老祖宗的东西，的确孔孟的思想影响了世界，特别是对我们的邻居日本和韩国的影响非常深，但这都是过去的事情了。<br/>
-<br/>
-看看现在，从我那个时候开始到现在的年轻人基本都是看日本漫画长大的；音乐，从热衷港台明星、到哈日、现在的哈韩，特别是韩国，一个只有区区5千万人口的国家，他们的流行音乐可以毫不夸张地说是红遍全世界了；电视剧，虽然国内如今年产n万部的电视剧，但是又有多少是精品呢？看来看去还是好多的港台剧、日韩剧、以及美剧；电影，就更不用说了，我是到了美国才感觉到好莱坞的强大，每个星期五还真的就是有这么多电影上演，中国看来看去就这么几个导演，新的导演拍个好片子还会被禁。<br/>
-<br/>
-中国5千年对外输出文化，在很长一段时间内也建立了中国大国的形象，这个形象不仅仅只是在经济上的，同样韩国最近几年对外的文化输出，不仅给韩国带来了可观的外汇收入，也越来越提升了韩国在世界各地的形象。中国如今GDP是世界第二了，但是在形象方面和很多软条件方面还是有很大差距，这个不是在美国时代广场上租个大屏幕就可以搞定的，需要更多在文化上潜移默化的改变别人的想法。<br/>
-<br/>
-其实在中国所有的文化产业中，有一个行业最近对外输出很大：游戏产业。这个在前几天的<a href="http://weibo.com/1750070171/xt7gflp0t">某游戏公司</a>融到巨资就可以体现出来，我身边有很多做游戏的朋友，第一桶金大部分都是在国外赚到的，不论是在Facebook平台上，还是独立的网页游戏。一个游戏行业的朋友也预言，网络游戏业会成为中国互联网行业第一个在外国做成功的行业。这些固然是好事，只是美中不足的是，大部分成功的游戏为了迎合国外的市场，都做成了西方的主题，从商业角度没有任何问题，只是我作为一个旁观者，希望如果有越来越多用中国主题做的游戏能够在国外受到欢迎就好了，这不仅会是中国互联网行业的一个骄傲，也会是中国近代文化产业成功对外输出的一个范例。
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -585,6 +732,10 @@ I am not able to take a full screen shot of this page, but this page is a great 
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/">Munin Setup for  Nginx and Mongodb Monitoring on Ubuntu 11.10</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/12/02/pi-lang-xiong-and-xuan/">Pi，朗、雄和轩</a>
@@ -602,10 +753,6 @@ I am not able to take a full screen shot of this page, but this page is a great 
         <a href="/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library/">CocoaPods Tip #1: How To Use Edge Version of A Library?</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2012/02/07/how-much-time-did-it-take-us-to-register-the-company-in-china/">How much time did it take us to register the company in China?</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -615,7 +762,7 @@ I am not able to take a full screen shot of this page, but this page is a great 
 
 <section>
   <h1>Categories</h1>
-    <ul id="category-list"><li><a href='/blog/categories/advertising'>Advertising (1)</a></li><li><a href='/blog/categories/business'>Business (2)</a></li><li><a href='/blog/categories/china'>China (6)</a></li><li><a href='/blog/categories/chinese'>Chinese (16)</a></li><li><a href='/blog/categories/english'>English (11)</a></li><li><a href='/blog/categories/entrepreneur'>Entrepreneur (2)</a></li><li><a href='/blog/categories/fun-facts'>Fun Facts (1)</a></li><li><a href='/blog/categories/korean'>Korean (1)</a></li><li><a href='/blog/categories/life'>Life (9)</a></li><li><a href='/blog/categories/misc'>Misc (2)</a></li><li><a href='/blog/categories/startup'>Startup (10)</a></li><li><a href='/blog/categories/technology'>Technology (8)</a></li><li><a href='/blog/categories/tsw'>TSW (3)</a></li><li><a href='/blog/categories/work'>Work (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/advertising'>Advertising (1)</a></li><li><a href='/blog/categories/business'>Business (2)</a></li><li><a href='/blog/categories/china'>China (6)</a></li><li><a href='/blog/categories/chinese'>Chinese (16)</a></li><li><a href='/blog/categories/english'>English (12)</a></li><li><a href='/blog/categories/entrepreneur'>Entrepreneur (2)</a></li><li><a href='/blog/categories/fun-facts'>Fun Facts (1)</a></li><li><a href='/blog/categories/korean'>Korean (1)</a></li><li><a href='/blog/categories/life'>Life (9)</a></li><li><a href='/blog/categories/misc'>Misc (2)</a></li><li><a href='/blog/categories/programming'>Programming (1)</a></li><li><a href='/blog/categories/startup'>Startup (10)</a></li><li><a href='/blog/categories/technology'>Technology (9)</a></li><li><a href='/blog/categories/tsw'>TSW (3)</a></li><li><a href='/blog/categories/work'>Work (2)</a></li></ul>
 </section>
 
   

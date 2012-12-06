@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Munin Setup for  Nginx and Mongodb Monitoring on Ubuntu 11.10 - Don't work. Be hated. Love someone.</title>
+  <meta name="author" content="Zheren (Ben) Hu">
+
+  
+  <meta name="description" content="I was trying to set up some kind of monitoring system for our soon-to-be-live
+backend system. After some quick research, I decided to use give Munin &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://zheren.hu/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Don't work. Be hated. Love someone." type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34392290-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Don't work. Be hated. Love someone.</a></h1>
+  
+    <h2>Shanghai, Tucson, New York City, San Francisco...</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:zheren.hu" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/categories/english">English Blogs</a></li>
+  <li><a href="/blog/categories/chinese">中文博客</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Munin Setup for Nginx and Mongodb Monitoring on Ubuntu 11.10</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-06T22:00:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I was trying to set up some kind of monitoring system for our soon-to-be-live
+backend system. After some quick research, I decided to use give Munin a try
+since it has pretty good community support for all kinds of plugins.
+Their <a href="munin-monitoring.org/">homepage</a> plus couple google searches help me
+to present the following walkthrough.</p>
+
+<h3>Installation</h3>
+
+<p>Installation is pretty easy on Ubuntu server, for the munin master:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install munin</span></code></pre></td></tr></table></div></figure>
+
+
+<p>for the munin node:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install munin-node munin-plugins-extra</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Configuration</h3>
+
+<h4>munin master</h4>
+
+<p>First you need configure <code>/etc/munin/munin.conf</code>, in general you just need to
+specify the host tree, bascially all munin nodes you want to monitor. Something
+like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[server1.domain.com]
+</span><span class='line'>    address [your_server_ip_address]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>One caveat here is to make sure the server name <code>server1.domain.com</code> you specify
+here matches the configuration later you do on your node. If these two do not
+match, it will not get data at all.</p>
+
+<p>Then you need to make sure your munin monitoring webpage can be accessed. If you
+are using nginx like me, just create a file under
+<code>/etc/nginx/sites-available/munin</code> with config like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>server {
+</span><span class='line'>  listen 80;
+</span><span class='line'>  server_name monitor.domain.com;
+</span><span class='line'>  location / {
+</span><span class='line'>    # Host Based auth
+</span><span class='line'>    #allow 11.12.22.55/32;
+</span><span class='line'>    #deny all;
+</span><span class='line'>    # Passwd auth
+</span><span class='line'>    auth_basic            "Restricted";
+</span><span class='line'>    auth_basic_user_file  munin_auth_pass;
+</span><span class='line'>    root /var/www/munin;
+</span><span class='line'>  }
+</span><span class='line'> }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I am using basic password authentication and for that you need
+to create a password file. For the above configuration, you need to have a file
+<code>/etc/ngnix/munin_auth_pass</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>username:encrypted_password</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you use ruby, the easiest thing to get the encrypted_password would be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>& irb
+</span><span class='line'>1.9.3 :001&gt; "password".crpyt('salt')
+</span><span class='line'>=&gt; "sa3tHJ3/KuYvI"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you are all set to have a munin monitoring page running and password
+proteced at <code>monitor.domain.com</code>.</p>
+
+<h4>munin node</h4>
+
+<p>Munin node, by default, is using port 4949, you can configure it and just make sure the
+port is not blocked by the firewall, which happened to me in the
+beginning. Configure <code>/etc/munin/munin-node.conf</code> and two key configurations are:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>host_name server1.domain.com
+</span><span class='line'>
+</span><span class='line'>allow ^127\.0\.0\.1$
+</span><span class='line'>allow [regex_of_ip_address_of_munin_master]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You need to make sure the host name you set here matches the one you put in your
+munin master conf. Now if you do a <code>sudo service munin-node restart</code>, you should
+be able to see graphs on your munin master for several existing monitor items
+like system, networking and etc.</p>
+
+<p>If you want to monitor more items like nginx and mongodb, you can find most
+third party plugins in <a href="https://github.com/munin-monitoring/contrib/tree/master/plugins/">munin github project</a>. Let&#8217;s say you want to monitor nginx, what you need to do is:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd /usr/share/munin/plugins
+</span><span class='line'>sudo wget -O nginx_combined https://raw.github.com/munin-monitoring/contrib/master/plugins/nginx/nginx-combined
+</span><span class='line'>sudo chmod +x nginx_combined
+</span><span class='line'>sudo ln -s /usr/share/munin/plugins/nginx_combined /etc/munin/plugins/nginx_combined_[munin node ip address]
+</span><span class='line'>sudo service munin-node restart</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And you need to configure <code>/etc/munin/plugin-conf.d/munin-node</code> to add these two
+lines:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[nginx*]
+</span><span class='line'>env.url http://localhost/nginx_status</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can add more plugins with similar approach and different plugins may have
+their own custom config to make sure it gets data correctly.</p>
+
+<p>This whole process took me more than a whole afternoon to figure out, hopefully
+this blog can help you move faster with munin.</p>
+
+<p>Happy monitoring!</p>
+
+<h3>References</h3>
+
+<ul>
+<li><a href="http://play.datalude.com/blog/2012/01/munin-nginx-mysql-ubuntu/">http://play.datalude.com/blog/2012/01/munin-nginx-mysql-ubuntu/</a></li>
+<li><a href="http://www.cowboycoded.com/2011/01/12/password-protect-your-entire-site-with-nginx/">http://www.cowboycoded.com/2011/01/12/password-protect-your-entire-site-with-nginx/</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Zheren (Ben) Hu</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-06T22:00:00+08:00" pubdate data-updated="true">Dec 6<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/english/'>English</a>, <a class='category' href='/blog/categories/programming/'>Programming</a>, <a class='category' href='/blog/categories/technology/'>Technology</a>, <a class='category' href='/blog/categories/work/'>Work</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+    
+    <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zheren.hu/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/"
+       data-via="" data-counturl="http://zheren.hu/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/">Tweet</a>
+    
+    
+    
+    
+    <script type="text/javascript" charset="utf-8">
+    (function(){
+      var _w = 72 , _h = 16;
+      var param = {
+        url:location.href,
+        type:'3',
+        count:'1', /**是否显示分享数，1显示(可选)*/
+        appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
+        title:"http://zheren.hu/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/",/**分享的文字内容(可选，默认为所在页面的title)*/
+        pic:'', /**分享图片的路径(可选)*/
+        ralateUid:"2112007295", /**关联用户的UID，分享微博会@该用户(可选)*/
+    	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+        rnd:new Date().valueOf()
+      }
+      var temp = [];
+      for( var p in param ){
+        temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+      }
+      document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+    })()
+    </script>
+    
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/12/02/pi-lang-xiong-and-xuan/" title="Previous Post: Pi，朗、雄和轩">&laquo; Pi，朗、雄和轩</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/">Munin Setup for  Nginx and Mongodb Monitoring on Ubuntu 11.10</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/02/pi-lang-xiong-and-xuan/">Pi，朗、雄和轩</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/11/23/story-of-an-entrepreneur/">一个创业者的故事</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/05/my-experience-with-samsung-galaxy-s3/">三星Galaxy S3使用有感</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/14/cocoapods-tip-number-1-how-to-use-edge-version-of-a-library/">CocoaPods Tip #1: How To Use Edge Version of A Library?</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+<section>
+  <h1>Categories</h1>
+    <ul id="category-list"><li><a href='/blog/categories/advertising'>Advertising (1)</a></li><li><a href='/blog/categories/business'>Business (2)</a></li><li><a href='/blog/categories/china'>China (6)</a></li><li><a href='/blog/categories/chinese'>Chinese (16)</a></li><li><a href='/blog/categories/english'>English (12)</a></li><li><a href='/blog/categories/entrepreneur'>Entrepreneur (2)</a></li><li><a href='/blog/categories/fun-facts'>Fun Facts (1)</a></li><li><a href='/blog/categories/korean'>Korean (1)</a></li><li><a href='/blog/categories/life'>Life (9)</a></li><li><a href='/blog/categories/misc'>Misc (2)</a></li><li><a href='/blog/categories/programming'>Programming (1)</a></li><li><a href='/blog/categories/startup'>Startup (10)</a></li><li><a href='/blog/categories/technology'>Technology (9)</a></li><li><a href='/blog/categories/tsw'>TSW (3)</a></li><li><a href='/blog/categories/work'>Work (2)</a></li></ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Zheren (Ben) Hu -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

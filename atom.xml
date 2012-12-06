@@ -4,7 +4,7 @@
   <title><![CDATA[Don't work. Be hated. Love someone.]]></title>
   <link href="http://zheren.hu/atom.xml" rel="self"/>
   <link href="http://zheren.hu/"/>
-  <updated>2012-12-04T01:03:39+08:00</updated>
+  <updated>2012-12-06T23:54:25+08:00</updated>
   <id>http://zheren.hu/</id>
   <author>
     <name><![CDATA[Zheren (Ben) Hu]]></name>
@@ -12,6 +12,165 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Munin Setup for  Nginx and Mongodb Monitoring on Ubuntu 11.10]]></title>
+    <link href="http://zheren.hu/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/"/>
+    <updated>2012-12-06T22:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10</id>
+    <content type="html"><![CDATA[<p>I was trying to set up some kind of monitoring system for our soon-to-be-live
+backend system. After some quick research, I decided to use give Munin a try
+since it has pretty good community support for all kinds of plugins.
+Their <a href="munin-monitoring.org/">homepage</a> plus couple google searches help me
+to present the following walkthrough.</p>
+
+<h3>Installation</h3>
+
+<p>Installation is pretty easy on Ubuntu server, for the munin master:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install munin</span></code></pre></td></tr></table></div></figure>
+
+
+<p>for the munin node:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>apt-get install munin-node munin-plugins-extra</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Configuration</h3>
+
+<h4>munin master</h4>
+
+<p>First you need configure <code>/etc/munin/munin.conf</code>, in general you just need to
+specify the host tree, bascially all munin nodes you want to monitor. Something
+like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[server1.domain.com]
+</span><span class='line'>    address [your_server_ip_address]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>One caveat here is to make sure the server name <code>server1.domain.com</code> you specify
+here matches the configuration later you do on your node. If these two do not
+match, it will not get data at all.</p>
+
+<p>Then you need to make sure your munin monitoring webpage can be accessed. If you
+are using nginx like me, just create a file under
+<code>/etc/nginx/sites-available/munin</code> with config like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>server {
+</span><span class='line'>  listen 80;
+</span><span class='line'>  server_name monitor.domain.com;
+</span><span class='line'>  location / {
+</span><span class='line'>    # Host Based auth
+</span><span class='line'>    #allow 11.12.22.55/32;
+</span><span class='line'>    #deny all;
+</span><span class='line'>    # Passwd auth
+</span><span class='line'>    auth_basic            "Restricted";
+</span><span class='line'>    auth_basic_user_file  munin_auth_pass;
+</span><span class='line'>    root /var/www/munin;
+</span><span class='line'>  }
+</span><span class='line'> }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I am using basic password authentication and for that you need
+to create a password file. For the above configuration, you need to have a file
+<code>/etc/ngnix/munin_auth_pass</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>username:encrypted_password</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you use ruby, the easiest thing to get the encrypted_password would be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>& irb
+</span><span class='line'>1.9.3 :001&gt; "password".crpyt('salt')
+</span><span class='line'>=&gt; "sa3tHJ3/KuYvI"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you are all set to have a munin monitoring page running and password
+proteced at <code>monitor.domain.com</code>.</p>
+
+<h4>munin node</h4>
+
+<p>Munin node, by default, is using port 4949, you can configure it and just make sure the
+port is not blocked by the firewall, which happened to me in the
+beginning. Configure <code>/etc/munin/munin-node.conf</code> and two key configurations are:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>host_name server1.domain.com
+</span><span class='line'>
+</span><span class='line'>allow ^127\.0\.0\.1$
+</span><span class='line'>allow [regex_of_ip_address_of_munin_master]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You need to make sure the host name you set here matches the one you put in your
+munin master conf. Now if you do a <code>sudo service munin-node restart</code>, you should
+be able to see graphs on your munin master for several existing monitor items
+like system, networking and etc.</p>
+
+<p>If you want to monitor more items like nginx and mongodb, you can find most
+third party plugins in <a href="https://github.com/munin-monitoring/contrib/tree/master/plugins/">munin github project</a>. Let&#8217;s say you want to monitor nginx, what you need to do is:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd /usr/share/munin/plugins
+</span><span class='line'>sudo wget -O nginx_combined https://raw.github.com/munin-monitoring/contrib/master/plugins/nginx/nginx-combined
+</span><span class='line'>sudo chmod +x nginx_combined
+</span><span class='line'>sudo ln -s /usr/share/munin/plugins/nginx_combined /etc/munin/plugins/nginx_combined_[munin node ip address]
+</span><span class='line'>sudo service munin-node restart</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And you need to configure <code>/etc/munin/plugin-conf.d/munin-node</code> to add these two
+lines:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[nginx*]
+</span><span class='line'>env.url http://localhost/nginx_status</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can add more plugins with similar approach and different plugins may have
+their own custom config to make sure it gets data correctly.</p>
+
+<p>This whole process took me more than a whole afternoon to figure out, hopefully
+this blog can help you move faster with munin.</p>
+
+<p>Happy monitoring!</p>
+
+<h3>References</h3>
+
+<ul>
+<li><a href="http://play.datalude.com/blog/2012/01/munin-nginx-mysql-ubuntu/">http://play.datalude.com/blog/2012/01/munin-nginx-mysql-ubuntu/</a></li>
+<li><a href="http://www.cowboycoded.com/2011/01/12/password-protect-your-entire-site-with-nginx/">http://www.cowboycoded.com/2011/01/12/password-protect-your-entire-site-with-nginx/</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Pi，朗、雄和轩]]></title>
@@ -359,19 +518,6 @@ I am still very thankful for Redmine team to provide the world a good choice and
 上海让我越看越爱，<br/>
 好日子，好时代，<br/>
 我在上海，立波也在。</pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[“蛋疼”英文怎么说？]]></title>
-    <link href="http://zheren.hu/blog/2011/08/31/how-to-say-danteng-in-english/"/>
-    <updated>2011-08-31T00:00:00+08:00</updated>
-    <id>http://zheren.hu/blog/2011/08/31/how-to-say-danteng-in-english</id>
-    <content type="html"><![CDATA[国内一个比较流行的词汇是“<a href="http://www.hudong.com/wiki/%E8%9B%8B%E7%96%BC">蛋疼</a>”，特别是最近和90后同学交流的时候，这个词汇是不停的出现，频率是相当的高啊。今天在吃晚饭的时候，我们的90后CEO<a href="http://muerr.com">朱朱同学</a>尝试给Matt解释这个“蛋疼”的意思，所以他说出了以下一段经典的解释：<br/>
-<br/>
-When you are extremely bored, you play with your egg, so it hurts!<br/>
-<br/>
-&nbsp;
 ]]></content>
   </entry>
   

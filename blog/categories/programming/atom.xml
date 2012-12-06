@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming | Don't work. Be hated. Love someone.]]></title>
+  <link href="http://zheren.hu/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://zheren.hu/"/>
+  <updated>2012-12-06T23:54:25+08:00</updated>
+  <id>http://zheren.hu/</id>
+  <author>
+    <name><![CDATA[Zheren (Ben) Hu]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Munin Setup for  Nginx and Mongodb Monitoring on Ubuntu 11.10]]></title>
+    <link href="http://zheren.hu/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10/"/>
+    <updated>2012-12-06T22:00:00+08:00</updated>
+    <id>http://zheren.hu/blog/2012/12/06/munin-setup-for-nginx-and-mongodb-monitoring-on-ubuntu-11-dot-10</id>
+    <content type="html"><![CDATA[<p>I was trying to set up some kind of monitoring system for our soon-to-be-live
+backend system. After some quick research, I decided to use give Munin a try
+since it has pretty good community support for all kinds of plugins.
+Their <a href="munin-monitoring.org/">homepage</a> plus couple google searches help me
+to present the following walkthrough.</p>
+
+<h3>Installation</h3>
+
+<p>Installation is pretty easy on Ubuntu server, for the munin master:</p>
+
+<p><code>
+apt-get install munin
+</code></p>
+
+<p>for the munin node:</p>
+
+<p><code>
+apt-get install munin-node munin-plugins-extra
+</code></p>
+
+<h3>Configuration</h3>
+
+<h4>munin master</h4>
+
+<p>First you need configure <code>/etc/munin/munin.conf</code>, in general you just need to
+specify the host tree, bascially all munin nodes you want to monitor. Something
+like this:</p>
+
+<p>```
+[server1.domain.com]</p>
+
+<pre><code>address [your_server_ip_address]
+</code></pre>
+
+<p>```</p>
+
+<p>One caveat here is to make sure the server name <code>server1.domain.com</code> you specify
+here matches the configuration later you do on your node. If these two do not
+match, it will not get data at all.</p>
+
+<p>Then you need to make sure your munin monitoring webpage can be accessed. If you
+are using nginx like me, just create a file under
+<code>/etc/nginx/sites-available/munin</code> with config like this:</p>
+
+<p>```
+server {
+  listen 80;
+  server_name monitor.domain.com;
+  location / {</p>
+
+<pre><code># Host Based auth
+#allow 11.12.22.55/32;
+#deny all;
+# Passwd auth
+auth_basic            "Restricted";
+auth_basic_user_file  munin_auth_pass;
+root /var/www/munin;
+</code></pre>
+
+<p>  }
+ }
+```</p>
+
+<p>I am using basic password authentication and for that you need
+to create a password file. For the above configuration, you need to have a file
+<code>/etc/ngnix/munin_auth_pass</code>:</p>
+
+<p><code>
+username:encrypted_password
+</code></p>
+
+<p>If you use ruby, the easiest thing to get the encrypted_password would be:</p>
+
+<p><code>
+&amp; irb
+1.9.3 :001&gt; "password".crpyt('salt')
+=&gt; "sa3tHJ3/KuYvI"
+</code></p>
+
+<p>Now you are all set to have a munin monitoring page running and password
+proteced at <code>monitor.domain.com</code>.</p>
+
+<h4>munin node</h4>
+
+<p>Munin node, by default, is using port 4949, you can configure it and just make sure the
+port is not blocked by the firewall, which happened to me in the
+beginning. Configure <code>/etc/munin/munin-node.conf</code> and two key configurations are:</p>
+
+<p>```
+host_name server1.domain.com</p>
+
+<p>allow ^127.0.0.1$
+allow [regex_of_ip_address_of_munin_master]
+```</p>
+
+<p>You need to make sure the host name you set here matches the one you put in your
+munin master conf. Now if you do a <code>sudo service munin-node restart</code>, you should
+be able to see graphs on your munin master for several existing monitor items
+like system, networking and etc.</p>
+
+<p>If you want to monitor more items like nginx and mongodb, you can find most
+third party plugins in <a href="https://github.com/munin-monitoring/contrib/tree/master/plugins/">munin github project</a>. Let's say you want to monitor nginx, what you need to do is:</p>
+
+<p><code>
+cd /usr/share/munin/plugins
+sudo wget -O nginx_combined https://raw.github.com/munin-monitoring/contrib/master/plugins/nginx/nginx-combined
+sudo chmod +x nginx_combined
+sudo ln -s /usr/share/munin/plugins/nginx_combined /etc/munin/plugins/nginx_combined_[munin node ip address]
+sudo service munin-node restart
+</code></p>
+
+<p>And you need to configure <code>/etc/munin/plugin-conf.d/munin-node</code> to add these two
+lines:</p>
+
+<p><code>
+[nginx*]
+env.url http://localhost/nginx_status
+</code></p>
+
+<p>You can add more plugins with similar approach and different plugins may have
+their own custom config to make sure it gets data correctly.</p>
+
+<p>This whole process took me more than a whole afternoon to figure out, hopefully
+this blog can help you move faster with munin.</p>
+
+<p>Happy monitoring!</p>
+
+<h3>References</h3>
+
+<ul>
+<li><a href="http://play.datalude.com/blog/2012/01/munin-nginx-mysql-ubuntu/">http://play.datalude.com/blog/2012/01/munin-nginx-mysql-ubuntu/</a></li>
+<li><a href="http://www.cowboycoded.com/2011/01/12/password-protect-your-entire-site-with-nginx/">http://www.cowboycoded.com/2011/01/12/password-protect-your-entire-site-with-nginx/</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
