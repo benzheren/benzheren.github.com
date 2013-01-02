@@ -4,7 +4,7 @@
   <title><![CDATA[Category: China | Don't work. Be hated. Love someone.]]></title>
   <link href="http://zheren.hu/blog/categories/china/atom.xml" rel="self"/>
   <link href="http://zheren.hu/"/>
-  <updated>2012-12-06T23:54:25+08:00</updated>
+  <updated>2013-01-02T20:51:36+08:00</updated>
   <id>http://zheren.hu/</id>
   <author>
     <name><![CDATA[Zheren (Ben) Hu]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mr. Hu's Rules for the Modern Chinese Man]]></title>
+    <link href="http://zheren.hu/blog/2013/01/02/mr-hus-rules-for-the-modern-chinese-man/"/>
+    <updated>2013-01-02T20:03:00+08:00</updated>
+    <id>http://zheren.hu/blog/2013/01/02/mr-hus-rules-for-the-modern-chinese-man</id>
+    <content type="html"><![CDATA[<p>在去旧金山的飞机上我开始读 <em>Mr. Jones' Rules for the Modern Man</em> 这本书，作者Dylan Jones是GQ UK的主编。英国男士一向是以绅士闻名世界的，Mr. Jones就从他的视角告诉大家怎么做一名现代版的绅士。我自己后悔没有早个5、6年读这本书，联想到身边有不少女生都抱怨中国男生应该普遍更绅士点，我就突发奇想，准备写一个针对中国情况的简版，这篇博客就这么诞生了。</p>
+
+<ol>
+<li>在绝大多数场合都要做到女生优先。电梯来了，女生先上；公车来了，女生先上；正常的门，女生先走。</li>
+<li>旋转门，你先走，她后走。</li>
+<li>上楼时走在女生后面；下楼时走在女生前面。</li>
+<li>和女生并肩走在街上，你永远要在靠着马路近的一边走。</li>
+<li>只有在两个场合你可以吐痰：足球场上和你家的洗手间。切记！</li>
+<li>电影院是用来看电影的，不是用来打电话的。</li>
+<li>插队是可耻行为，如果你还和女生抢，那就更加不可原谅了。</li>
+<li>在公共场合抽烟也是可耻行为。另外请参考下一条。</li>
+<li>已经2013年了，抽烟已经不是耍酷的行为了，快点戒烟吧！</li>
+<li>开车变相转弯的时候永远都要打信号灯。</li>
+<li>在有限空间内说话请小声，比如地铁上。</li>
+<li>嘴里吃着东西的时候，请尽量不要说话。</li>
+</ol>
+
+
+<p>未完待续</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How much time did it take us to register the company in China?]]></title>
@@ -100,52 +127,6 @@
 
 
 <p>哎，这么大一个上市的国有银行，当年，甚至现在还有可能是全世界市值最高的银行，技术竟然是如此，我承认银行的技术本来就比较保守落后，可是做成这样地步的，实在是让我很担心啊。在微博上发了一贴，结果我朋友幽默了一把，说估计工行和微博有合作关系，特别喜欢@符号，只能是怒其不争啊。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hosting Service in China]]></title>
-    <link href="http://zheren.hu/blog/2011/08/13/hosting-service-in-china/"/>
-    <updated>2011-08-13T00:00:00+08:00</updated>
-    <id>http://zheren.hu/blog/2011/08/13/hosting-service-in-china</id>
-    <content type="html"><![CDATA[<p>When you start working on an Internet startup, one of few things you will think about first is how I should host my service. In US, where Internet infrastructure is ahead of the rest of the world, this becomes less a problem for startup because there are so many choices like AWS, GAE or even Microsoft Azure. However, situation in China is very different: first, both AWS and GAE do not have servers in mainland China, which means it is really slow to access either of them; second, legally it is not a good idea to use foreign servers anyway, because in order for you to run Internet business in China, you have to register your website with government and that requires you have serves physically located in China.<br/></p>
-
-<br/>
-
-
-<p>In the old time, some Chinese startups will start with a foreign VPS (usually in US) such as Linode for the development and initial launch while they wait for the approval of government organizations. After that, the startup has to buy its own servers and pay data centers to put their servers on the rack which is a pretty big investment upfront for a small startup.<br/></p>
-
-<br/>
-
-
-<p>With the development of Chinese Internet infrastructure and the boom of tech startups, these days there are more and more local companies start to offer VPS or cloud hosting services. Companies I am aware of are:<br/></p>
-
-<ul><br/>
-    <li>http://aliyun.com: this is a service provided by <a href="http://alibaba.com">Alibaba</a>, one of the 3 biggest Internet companies in China. Their service looks like a VPS service with a pretty clear <a href="http://phpwind.aliyun.com/show/ecc">fee structure</a>. It starts with 199 RMB a month (about 30 USD) for a server. It provides a beta version cloud database service which does backup and a lot of maintenance work for you. It supports only MySQL for now.</li><br/>
-    <li>http://netbank.cn: this is a HangZhou company which provides VPS service as well. It provide three basic plans and on top of that you can customize according to your need. For a Intel XEON520 single core, 2GB memory and 30GB harddrive server with 100MB bandwidth from China Telecom (this is not the amount, just the speed)  , it costs you around 3000RMB/year.</li><br/>
-    <li>http://xingcloud.com: this is a startup from Kai-Fu Lee's <a href="http://chuangxin.com">Innovation Works</a>, currently it markets itself as a cloud platform for game developers. With the reputation of Kai-Fu Lee and the strong team behind it, XingCloud could be an interesting player to watch in this area.</li><br/>
-</ul>
-
-
-<br/>
-
-
-<p><span class="Apple-style-span" style="color:#444444;font-family:Georgia, 'Bitstream Charter', serif;font-size:16px;line-height:24px;">A very interesting thing to note about hosting service in China is: you need to pay for bandwidth of different ISPs, because if you don't do that, your service will be slow for users using that ISP. There are six major ISPs here, and two of them are the biggest: China Telecom and China Net Communication (CNC). For a startup, you probably should pay bandwidth for these 2 ISPs. Because of this bandwidth thing, the cost of Chinese Internet Video companies are much higher than Youtube.</span><br/></p>
-
-<br/>
-
-
-<p><span class="Apple-style-span" style="color:#444444;font-family:Georgia, 'Bitstream Charter', serif;font-size:16px;line-height:24px;">What did we do?</span><br/></p>
-
-<br/>
-
-
-<p><span class="Apple-style-span" style="color:#444444;font-family:Georgia, 'Bitstream Charter', serif;font-size:16px;line-height:24px;">Before we got here, we started with a <a href="http://www.linode.com">Linode</a> monthly account. We have been using that for the past week, it is just super slow because of GFW and the physical distance. Sometimes our terminal window just halts there. So we have decided to switch to a local provider since we can try out their service 3 months for free. That will make huge difference because the average ping value for Linode server is about 350ms while the local one is about 5ms. By the way, there is a <a href="http://ping.chinaz.com/">service</a> in China to test your ping value from different parts of the country with different ISPs. </span><br/></p>
-
-<br/>
-
-
-<p>Hope this information can give you an idea how hosting works in China. =)</p>
 ]]></content>
   </entry>
   

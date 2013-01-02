@@ -4,7 +4,7 @@
   <title><![CDATA[Don't work. Be hated. Love someone.]]></title>
   <link href="http://zheren.hu/atom.xml" rel="self"/>
   <link href="http://zheren.hu/"/>
-  <updated>2012-12-06T23:54:25+08:00</updated>
+  <updated>2013-01-02T20:51:36+08:00</updated>
   <id>http://zheren.hu/</id>
   <author>
     <name><![CDATA[Zheren (Ben) Hu]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mr. Hu's Rules for the Modern Chinese Man]]></title>
+    <link href="http://zheren.hu/blog/2013/01/02/mr-hus-rules-for-the-modern-chinese-man/"/>
+    <updated>2013-01-02T20:03:00+08:00</updated>
+    <id>http://zheren.hu/blog/2013/01/02/mr-hus-rules-for-the-modern-chinese-man</id>
+    <content type="html"><![CDATA[<p>在去旧金山的飞机上我开始读 <em>Mr. Jones&#8217; Rules for the Modern Man</em> 这本书，作者Dylan Jones是GQ UK的主编。英国男士一向是以绅士闻名世界的，Mr. Jones就从他的视角告诉大家怎么做一名现代版的绅士。我自己后悔没有早个5、6年读这本书，联想到身边有不少女生都抱怨中国男生应该普遍更绅士点，我就突发奇想，准备写一个针对中国情况的简版，这篇博客就这么诞生了。</p>
+
+<ol>
+<li>在绝大多数场合都要做到女生优先。电梯来了，女生先上；公车来了，女生先上；正常的门，女生先走。</li>
+<li>旋转门，你先走，她后走。</li>
+<li>上楼时走在女生后面；下楼时走在女生前面。</li>
+<li>和女生并肩走在街上，你永远要在靠着马路近的一边走。</li>
+<li>只有在两个场合你可以吐痰：足球场上和你家的洗手间。切记！</li>
+<li>电影院是用来看电影的，不是用来打电话的。</li>
+<li>插队是可耻行为，如果你还和女生抢，那就更加不可原谅了。</li>
+<li>在公共场合抽烟也是可耻行为。另外请参考下一条。</li>
+<li>已经2013年了，抽烟已经不是耍酷的行为了，快点戒烟吧！</li>
+<li>开车变相转弯的时候永远都要打信号灯。</li>
+<li>在有限空间内说话请小声，比如地铁上。</li>
+<li>嘴里吃着东西的时候，请尽量不要说话。</li>
+</ol>
+
+
+<p>未完待续</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Munin Setup for  Nginx and Mongodb Monitoring on Ubuntu 11.10]]></title>
@@ -497,27 +524,6 @@ The following week will be very critical, since the program is close to the end 
     <content type="html"><![CDATA[Since our project is getting more and more complicated, we have started to use some project management tool to help use to manage and track issues. Because we are a startup, we cannot afford fancy tools yet. Thus we picked <a href="http://www.redmine.org">Redmine</a>, a free open source tool. So far our impression is Redmine is made by engineers and its UX/UI is designed for engineers ONLY. Some simple operations, such as display all issues no matter whom it is issued to, needs some serious engineer thinking to achieve it.<br/>
 <br/>
 I am still very thankful for Redmine team to provide the world a good choice and I will write more feedback here later.
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[喜欢上海的理由]]></title>
-    <link href="http://zheren.hu/blog/2011/09/08/reasons-that-i-love-shanghai/"/>
-    <updated>2011-09-08T00:00:00+08:00</updated>
-    <id>http://zheren.hu/blog/2011/09/08/reasons-that-i-love-shanghai</id>
-    <content type="html"><![CDATA[记得高中的时候，立波啤酒在上海有一个几乎人人皆知的广告《立波啤酒——喜欢上海的理由》，特别是那首<a href="http://v.youku.com/v_show/id_XNTA2Mjk5NDQ=.html">广告歌</a>是深入人心啊，这个星期让我加一个喜欢上海的理由：<strong>上海有关部门批准网站备案效率最快</strong>！<br/>
-<pre>上海是我长大成人的所在，带着我所有的情怀；<br/>
-第一次干杯，头一次恋爱，在永远的纯真年代；<br/>
-追过港台同胞，迷上过老外；<br/>
-自己当明星，感觉也不坏；<br/>
-成功的滋味，自己最明白；<br/>
-旧的不去，新的不来，<br/>
-城市的高度，它越变越快，<br/>
-有人出去，有人回来，<br/>
-身边的朋友，越穿越新派，<br/>
-上海让我越看越爱，<br/>
-好日子，好时代，<br/>
-我在上海，立波也在。</pre>
 ]]></content>
   </entry>
   
